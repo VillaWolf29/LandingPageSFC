@@ -1,6 +1,6 @@
 
 document.addEventListener('DOMContentLoaded', function () {
-    var el = document.getElementById('carrusel-servicios');
+    var el = document.getElementById('carrusel-caracteristicas');
     if (!el || typeof bootstrap === 'undefined') return;
 
     // Explicitly initialize the carousel with wrap disabled
@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // Asegura que las flechas del teclado muevan el carrusel cuando esté enfocado o haga click en él
     document.addEventListener('DOMContentLoaded', function () {
-    var el = document.getElementById('carrusel-servicios');
+    var el = document.getElementById('carrusel-caracteristicas');
         if (!el) return;
 
         // Inicializa el carousel de Bootstrap (defensivo)
