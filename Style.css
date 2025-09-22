@@ -1,0 +1,287 @@
+@import url('https://fonts.googleapis.com/css2?family=Baumans&family=Bitcount+Ink:wght@100..900&family=Bitcount+Prop+Single+Ink:wght@100..900&family=Changa+One:ital@0;1&family=Limelight&family=Quantico:ital,wght@0,400;0,700;1,400;1,700&family=Righteous&family=Unbounded:wght@200..900&display=swap');
+body{
+	background: linear-gradient(135deg, #D9E2EC 0%, #BCC5CE 100%);	
+	font-family: "Baumans", system-ui;	
+
+}
+.shadow {
+  box-shadow: none !important;
+}
+.sombra-barra-navegacion{
+    background-color: #0F4C75;
+}
+.logo-barra {
+	width: 150px;
+	height: auto;
+}
+.icono-telefono {
+  width: 18px;     
+  height: 18px;
+  margin-right: 5px; 
+  vertical-align: middle;
+}
+
+.titulo-inicio {
+	background: linear-gradient(90deg, #3a8ef6 0%, #a259f7 50%, #ff5e62 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+	color: transparent;
+	font-size: 5rem;
+}
+.subtitulo-inicio {
+    font-size: 2rem;
+    margin-top: 15px;
+    font-weight: 500;
+}
+.descripcion-inicio {
+    font-size: 2.5rem;
+    margin-top: 20px;
+    color: #34495e;
+}
+.btn-transformacion, .btn-cotizar, .boton-contacto, .boton-enviar {
+    background: linear-gradient(90deg, #3a8ef6, #a259f7, #ff5e62);
+    color: #fff;
+    border: none;
+    padding: 12px 28px;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    transition: 0.3s;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+.btn-transformacion:hover, .btn-cotizar:hover, .boton-contacto:hover, .boton-enviar:hover {
+    opacity: 0.9;
+    transform: scale(1.05);
+}
+.fila-indicadores {
+	gap: 1rem;
+	justify-content: center;
+}
+.indicador {
+	color: #1f2937;
+	font-weight: 600;
+	font-size: 0.98rem;
+}
+.logos-inicio,.logos-tecnologia {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+.info-rapida {
+  color: #3B82F6;  
+  font-weight: 500;
+  font-size: 1rem;
+}
+.titulo-nosotros-principal, .titulo-tecnologias, .titulo-servicios, .titulo-caracteristicas, .titulo-contacto {
+	text-align: center;
+	margin-bottom: 2rem;
+	font-size: 2.2rem;
+	font-weight: 700;
+	background: linear-gradient(90deg, #3a8ef6 0%, #a259f7 50%, #ff5e62 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+	color: transparent;
+}
+.video-nosotros {
+	border-radius: 16px;
+	margin-top: 1rem;
+	width: 70%;
+	display: block;
+}
+.tarjeta-tecnologia {
+    background: rgb(255, 255, 255);
+    backdrop-filter: blur(8px);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+.tarjeta-tecnologia:hover {
+    border-color: #3a8ef6;
+    box-shadow: 0 0 0 1.5px rgba(58, 142, 246, 0.1);
+    transform: translateY(-2px);
+}
+.tarjeta-tecnologia:hover .logos-tecnologia {
+    transform: scale(1.15);
+}
+.titulo-cuadro {
+    color: #2d3748;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0;
+}
+.texto-cuadro {
+    color: #718096;
+    font-size: 0.9rem;
+    margin-top: 4px;
+}
+/* Ajustes para imagenes del carrusel: más pequeñas y borde ovalado */
+.imagen-servicio {
+	width: 100%;
+	max-width: 320px; /* control de anchura, deja que bootstrap controle el layout */
+	height: auto;    /* deja que la imagen mantenga proporción */
+	object-fit: cover;
+	border-radius: 16px; /* borde redondeado; Bootstrap gestiona responsividad */
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+/* Zonas clicables laterales: mitades izquierda/derecha clicables para cambiar slide (invisibles pero con área de objetivo grande) */
+.zona-clic-carrusel {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	width: 25%; /* ancho de la zona clicable; ajustar si es necesario */
+	background: transparent;
+	border: none;
+	z-index: 5;
+}
+.zona-clic-izquierda {
+	left: 0;
+}
+.zona-clic-derecha {
+	right: 0;
+}
+/* Ocultar visualmente los controles prev/next de Bootstrap pero conservarlos para lectores de pantalla y enfoque programático */
+#carrusel-servicios.carousel .carousel-control-prev,
+#carrusel-servicios.carousel .carousel-control-next {
+	opacity: 0;
+	pointer-events: none; /* inhabilita interacción directa */
+}
+/* Estilos para títulos y párrafos del carrusel (Sección Servicios) */
+#seccion-servicios .carousel-item h3,
+#seccion-servicios .carousel-item h3.h2 {
+	color: #0f172a; /* tono oscuro para título */
+	font-size: 2rem;
+	font-weight: 800;
+	line-height: 1.05;
+	margin-bottom: 0.5rem;
+}
+
+#seccion-servicios .carousel-item .subtitulo-servicio {
+	color: #6b7280; /* gris secundario */
+	font-size: 1rem;
+	margin-bottom: 0.75rem;
+}
+
+#seccion-servicios .carousel-item .descripcion-servicio {
+	color: #334155; /* gris oscuro legible */
+	font-size: 1.05rem;
+	line-height: 1.6;
+	margin-bottom: 1rem;
+	max-width: 760px; /* evita que el párrafo se haga demasiado ancho */
+}
+
+#seccion-servicios .carousel-item .texto-tecnologias {
+	color: #0b1220;
+	font-weight: 700;
+	font-size: 0.9rem;
+	letter-spacing: 0.6px;
+	margin-top: 0.5rem;
+	margin-bottom: 0.5rem;
+}
+
+#seccion-servicios .carousel-item .tecnologias-lista .tecnologia-item {
+	color: #374151;
+	font-size: 0.98rem;
+}
+
+/* Botón cotizar dentro del carrusel */
+#seccion-servicios .carousel-item .btn-cotizar {
+	padding: 0.6rem 1.6rem;
+	border-radius: 10px;
+	font-weight: 700;
+}
+/* Opción: cuando se quieran controles visibles en la parte inferior, añadir la clase 'mostrar-controles-inferiores' al contenedor del carrusel
+   Posiciona las flechas centradas abajo y las hace visibles */
+#carrusel-servicios.mostrar-controles-inferiores.carousel .carousel-control-prev,
+#carrusel-servicios.mostrar-controles-inferiores.carousel .carousel-control-next {
+	opacity: 1;
+	pointer-events: auto;
+	width: auto;
+	height: auto;
+}
+#carrusel-servicios.mostrar-controles-inferiores.carousel .carousel-control-prev {
+	left: 40%;
+	right: auto;
+	transform: translateX(-100%);
+	bottom: 10px;
+	top: auto;
+}
+#carrusel-servicios.mostrar-controles-inferiores.carousel .carousel-control-next {
+	right: 40%;
+	left: auto;
+	transform: translateX(100%);
+	bottom: 10px;
+	top: auto;
+}
+/* asegurar que las zonas clicables sean enfocables y muestren un contorno visible para accesibilidad */
+.zona-clic-carrusel:focus {
+	outline: 3px solid rgba(58,142,246,0.45);
+	outline-offset: -2px;
+}
+#carrusel-servicios:focus {
+	outline: none;
+	box-shadow: none;
+}
+#carrusel-servicios:focus-visible {
+	outline: linear-gradient(135deg, #D9E2EC 0%, #BCC5CE 100%);	
+}
+.tarjeta-caracteristica {
+  border-radius: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.tarjeta-caracteristica:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+.icono-caracteristica {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+.imagen-caracteristica {
+  max-height: 80px;
+  object-fit: contain;
+}
+#pie-pagina {
+  background-color: #0F4C75 !important;
+  color: #ffffff;
+}
+.titulo-footer{
+	background: linear-gradient(90deg, #3a8ef6 0%, #a259f7 50%, #ff5e62 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text; 
+  color: transparent;
+}
+.pie-pagina {
+  color: #fff; 
+}
+
+.pie-pagina h5,
+.pie-pagina h6,
+.pie-pagina p,
+.pie-pagina li,
+.pie-pagina span {
+  color: #fff; 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
