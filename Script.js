@@ -18,33 +18,6 @@ document.addEventListener('DOMContentLoaded', function () {
         if (e.key === 'ArrowLeft') carousel.prev();
         if (e.key === 'ArrowRight') carousel.next();
     });
-});
-    
+});    
 
-// Asegura que las flechas del teclado muevan el carrusel cuando esté enfocado o haga click en él
-    document.addEventListener('DOMContentLoaded', function () {
-    var el = document.getElementById('carrusel-caracteristicas');
-        if (!el) return;
-
-        // Inicializa el carousel de Bootstrap (defensivo)
-        if (typeof bootstrap !== 'undefined' && !el._bsCarousel) {
-            el._bsCarousel = new bootstrap.Carousel(el, { wrap: false, keyboard: false, ride: false });
-        }
-
-        // Permitir foco y que al hacer click tome foco
-        el.setAttribute('tabindex', '0');
-        el.addEventListener('click', function () { el.focus(); });
-
-        el.addEventListener('keydown', function (e) {
-            if (!el._bsCarousel) return;
-            if (e.key === 'ArrowLeft') {
-                e.preventDefault();
-                el._bsCarousel.prev();
-            } else if (e.key === 'ArrowRight') {
-                e.preventDefault();
-                el._bsCarousel.next();
-            }
-    });
-    });
-    
     

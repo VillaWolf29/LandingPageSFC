@@ -1,14 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Baumans&family=Bitcount+Ink:wght@100..900&family=Bitcount+Prop+Single+Ink:wght@100..900&family=Changa+One:ital@0;1&family=Limelight&family=Quantico:ital,wght@0,400;0,700;1,400;1,700&family=Righteous&family=Unbounded:wght@200..900&display=swap');
 body{
-	background: linear-gradient(135deg, #D9E2EC 0%, #BCC5CE 100%);	
+	background: linear-gradient(135deg, #D9E2EC 0%, #BCC5CE 100%);  
 	font-family: "Baumans", system-ui;	
-
 }
 .shadow {
   box-shadow: none !important;
 }
 .sombra-barra-navegacion{
     background-color: #0F4C75;
+}
+
+.navbar .nav-link {
+  font-size: 1.5rem; /* Cambia este valor para ajustar el tamaño */
+  font-weight: 500;
+}
+
+.navbar .boton-contacto {
+  font-size: 1.2rem; /* Tamaño del botón de contacto */
 }
 .logo-barra {
 	width: 150px;
@@ -200,6 +208,7 @@ body{
   outline: none !important;
   box-shadow: none !important;
 }
+
 .tarjeta-caracteristica:hover {
   transform: translateY(-8px);
   box-shadow: 0 8px 20px rgba(0,0,0,0.15);
