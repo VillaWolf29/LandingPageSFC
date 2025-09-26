@@ -20,4 +20,17 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });    
 
+  // Seleccionamos todos los enlaces del navbar
+  const enlaces = document.querySelectorAll('.navbar-nav .nav-link');
+
+  enlaces.forEach(enlace => {
+    enlace.addEventListener('click', function() {
+      // quitar 'activo' de todos
+      enlaces.forEach(e => e.classList.remove('activo'));
+      
+      // agregar 'activo' al clicado
+      this.classList.add('activo');
+    });
+  });
+
     
