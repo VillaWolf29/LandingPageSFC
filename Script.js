@@ -15,22 +15,68 @@ document.addEventListener('DOMContentLoaded', function () {
     // Keyboard navigation: left/right arrows when the carousel has focus
     el.setAttribute('tabindex', '0');
     el.addEventListener('keydown', function (e) {
-        if (e.key === 'ArrowLeft') carousel.prev();
-        if (e.key === 'ArrowRight') carousel.next();
+      if (e.key === 'ArrowLeft') carousel.prev();
+      if (e.key === 'ArrowRight') carousel.next();
     });
-});    
 
-  // Seleccionamos todos los enlaces del navbar
-  const enlaces = document.querySelectorAll('.navbar-nav .nav-link');
+
+
+});  
+
+
+// Seleccionamos todos los enlaces del navbar
+const enlaces = document.querySelectorAll('.navbar-nav .nav-link');
 
   enlaces.forEach(enlace => {
     enlace.addEventListener('click', function() {
-      // quitar 'activo' de todos
-      enlaces.forEach(e => e.classList.remove('activo'));
-      
-      // agregar 'activo' al clicado
-      this.classList.add('activo');
-    });
+    // quitar 'activo' de todos
+    enlaces.forEach(e => e.classList.remove('activo'));
+    
+    // agregar 'activo' al clicado
+    this.classList.add('activo');
   });
+}); 
+
+
+
+// Animación de scroll para la sección de servicios
+document.addEventListener('DOMContentLoaded', () => {
+  const wrapper = document.querySelector('#seccion-servicios');
+  const servicios = document.querySelectorAll('.fila-servicio');
+
+  if (!wrapper || servicios.length === 0) return;
+
+  const total = servicios.length;
+  wrapper.style.setProperty('--numcards', total);
+
+  if (typeof ViewTimeline === 'undefined' || typeof CSS === 'undefined' || typeof CSS.percent !== 'function') {
+    console.warn('Scroll-driven animations no soportado en este navegador');
+    return;
+  }
+
+  const timeline = new ViewTimeline({
+    subject: wrapper,
+    axis: 'block'
+  });
+
+  servicios.forEach((servicio, i) => {
+    const index = i + 1;
+    const reverse = total - index;
+    const endScale = 1 - (0.1 * reverse);
+
+    servicio.animate(
+      { transform: [ `scale(1)`, `scale(${endScale})` ] },
+      {
+        timeline: timeline,
+        fill: 'forwards',
+        rangeStart: `exit-crossing ${CSS.percent((i / total) * 100)}`,
+        rangeEnd:   `exit-crossing ${CSS.percent((index / total) * 100)}`
+      }
+    );
+  });
+});
+
+
+
 
     

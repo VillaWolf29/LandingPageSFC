@@ -15,18 +15,17 @@
   --gradient-nav: linear-gradient(90deg, var(--primary-blue), var(--secondary-blue));
   --gradient-button: linear-gradient(90deg, var(--accent-teal), var(--accent-cyan));
 }
-body{
-	/*background: linear-gradient(135deg, #D9E2EC 0%, #BCC5CE 100%);*/
+body{	
 	font-family: "Baumans", system-ui;
   background: linear-gradient(135deg, var(--dark-bg) 0%, var(--dark-secondary) 100%);
   color: var(--text-white);  
   line-height: 1.6;
+  overflow-x: hidden;
 }
 .shadow {
   box-shadow: none !important;
 }
 .sombra-barra-navegacion{
-  /*background-color: #0F4C75;*/ 
   background: var(--gradient-nav) !important;
   backdrop-filter: blur(15px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
@@ -34,8 +33,6 @@ body{
   transition: all 0.3s ease;
 }
 .navbar .nav-link {
-  /*font-size: 1.5rem; /* Cambia este valor para ajustar el tamaño */
-  /*font-weight: 500;  */
   color: var(--text-white) !important;
   font-weight: 500;
   margin: 0 15px;
@@ -53,22 +50,19 @@ body{
   margin-right: 20px;
   transition: all 0.3s ease; 
 }
-
-/*nuevo*/
 .navbar-nav .nav-link:hover,
 .navbar-nav .nav-link.activo {
   background: rgba(0, 212, 170, 0.2);
   color: var(--accent-teal) !important;
   transform: translateY(-2px);
 }
-/*nuevo*/
 .telefono-navegacion {
   color: var(--text-white) !important;
   font-size: 1rem;
   transition: all 0.3s ease;
 }
 .navbar .boton-contacto {
-  font-size: 1.2rem; /* Tamaño del botón de contacto */
+  font-size: 1.2rem;
 }
 .logo-barra {
 	width: 170px;
@@ -85,10 +79,6 @@ body{
 }
 
 .titulo-inicio {
-	/*background: linear-gradient(90deg, #3a8ef6 0%, #a259f7 50%, #ff5e62 100%);
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
-	background-clip: text;*/	
   background: linear-gradient(90deg, #3B82F6 0%, #00D4AA 100%) !important; 
   -webkit-background-clip: text !important; 
   -webkit-text-fill-color: transparent !important; 
@@ -109,15 +99,7 @@ body{
     margin-top: 20px;
        
 }
-.btn-transformacion, .boton-cotizar, .boton-contacto, .boton-enviar {
-  /*background: linear-gradient(90deg, #3b82f6, #8b5cf6);
-  color: #fff;
-  font-weight: 600;
-  padding: 0.6rem 1.5rem;
-  border: none;
-  border-radius: 30px;
-  transition: all 0.3s ease;
-  text-decoration: none;*/
+.btn-transformacion, .boton-cotizar, .boton-contacto, .boton-enviar, .btn-primary {
   background: var(--gradient-button) !important;
   border: none;
   color: var(--text-white) !important;
@@ -126,14 +108,9 @@ body{
   font-weight: 600;
   transition: all 0.3s ease;
 }
-.btn-transformacion:hover, .boton-cotizar:hover, .boton-contacto:hover, .boton-enviar:hover {
-  /*background: linear-gradient(90deg, #2563eb, #7c3aed);
-  color: #fff;
-  transform: translateY(-2px);
-  box-shadow: 0px 5px 15px rgba(59, 130, 246, 0.4);*/
+.btn-transformacion:hover, .boton-cotizar:hover, .boton-contacto:hover, .boton-enviar:hover, .btn-primary:hover {
   transform: translateY(-3px);
-  box-shadow: 0 12px 40px rgba(0, 212, 170, 0.4);
-    
+  box-shadow: 0 12px 40px rgba(0, 212, 170, 0.4);    
 }
 .fila-indicadores {
 	gap: 1rem;
@@ -160,12 +137,7 @@ body{
 	margin-bottom: 2rem; 
 	font-size: 3rem!important;
 	font-weight: 800;
-  line-height: 1.2;
-	/*background: linear-gradient(90deg, #3a8ef6 0%, #a259f7 50%, #ff5e62 100%);
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
-	background-clip: text;
-	color: transparent;*/
+  line-height: 1.2;	
   background: linear-gradient(90deg, #3B82F6 0%, #00D4AA 100%) !important; 
   -webkit-background-clip: text !important; 
   -webkit-text-fill-color: transparent !important; 
@@ -225,7 +197,7 @@ body{
   margin-bottom: 25px;
 }
 .seccion-servicios .imagen-servicio {
-  max-width: 350px; /* 👈 Tamaño fijo para todas las imágenes */
+  max-width: 350px; 
   display: block;
   margin: 0 auto;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -234,29 +206,24 @@ body{
   transform: scale(1.05);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
-
-/* Títulos */
 .seccion-servicios h3 {
   font-size: 1.8rem;
   font-weight: 700;
   color: var(--text-white); 
   margin-bottom: 0.8rem;
 }
-
 .seccion-servicios .subtitulo-servicio {
   font-size: 1.1rem;
   font-weight: 500;
   color: var(--accent-teal);
   margin-bottom: 1rem;
 }
-
 .seccion-servicios .descripcion-servicio {
   font-size: 1.2rem;
   line-height: 1.6;
   margin-bottom: 1.5rem;
   color: var(--text-white); 
 }
-
 .seccion-servicios .texto-tecnologias {
   font-weight: 700;
   font-size: 0.95rem;
@@ -264,13 +231,11 @@ body{
   margin-bottom: 0.5rem;
   letter-spacing: 1px;
 }
-
 .seccion-servicios .lista-tecnologias {
   font-size: 0.95rem;
   color: #1e293b;
   
 }
-
 .seccion-servicios .item-tecnologia {
   margin-bottom: 0.5rem;
   display: flex;
@@ -282,6 +247,18 @@ body{
   height: 10px;
   flex-shrink: 0;
 }
+
+.fila-servicio {
+  position: sticky;
+  top: 120px;
+  border-radius: 20px;
+  background: var(--dark-secondary);
+  color: var(--text-light);
+  padding: 2rem;  
+  margin-bottom: 60px;
+  transform-origin: top center;
+}
+
 #carrusel-caracteristicas:focus,
 #carrusel-caracteristicas .carousel-control-prev:focus,
 #carrusel-caracteristicas .carousel-control-next:focus,
@@ -315,9 +292,7 @@ body{
   color: var(--text-light);
   line-height: 1.6;
 }
-#pie-pagina {
-  background: rgba(0, 0, 0, 0.3);  
-}
+
 .titulo-footer{
 	background: linear-gradient(90deg, #3B82F6 0%, #00D4AA 100%) !important; 
   -webkit-background-clip: text !important; 
@@ -325,11 +300,6 @@ body{
   background-clip: text !important;
   color: transparent;
   font-size: 1.5rem;
-}
-.pie-pagina {
-  background: rgba(0, 0, 0, 0.3);
-  border-top: 1px solid rgba(0, 212, 170, 0.3);
-  color: var(--text-light);
 }
 .pie-pagina ul li {
   color: var(--text-light);
@@ -341,9 +311,8 @@ body{
   cursor: pointer;
 }
 .fade-in {
-    animation: fadeInUp 0.6s ease forwards;
+  animation: fadeInUp 0.6s ease forwards;
 }
-
 .pie-pagina h5,
 .pie-pagina h6,
 .pie-pagina p,
@@ -351,8 +320,6 @@ body{
 .pie-pagina span {
   color: #fff; 
 }
-
-
 
 
 
