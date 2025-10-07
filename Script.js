@@ -23,22 +23,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
 });  
 
-
-// Seleccionamos todos los enlaces del navbar
-const enlaces = document.querySelectorAll('.navbar-nav .nav-link');
-
-  enlaces.forEach(enlace => {
-    enlace.addEventListener('click', function() {
-    // quitar 'activo' de todos
-    enlaces.forEach(e => e.classList.remove('activo'));
-    
-    // agregar 'activo' al clicado
-    this.classList.add('activo');
-  });
-}); 
-
-
-
 // Animación de scroll para la sección de servicios
 document.addEventListener('DOMContentLoaded', () => {
   const wrapper = document.querySelector('#seccion-servicios');
@@ -77,6 +61,46 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
+// Respuestas predefinidas del bot
+const respuestas = {
+  "hola": "¡Hola! 👋 Soy SmartBot, ¿en qué puedo ayudarte?",
+  "servicios": "Ofrecemos Soluciones 4.0, Desarrollo de Apps y Videojuegos 🎮",
+  "contacto": "Puedes contactarnos al 📞 +51 942 149 115 o en ✉️ contacto@smartfactorychain.com",
+  "tecnologias": "Dominamos IoT, Big Data, Inteligencia Artificial, Blockchain y más 🚀",
+  "default": "No entendí tu mensaje 🤔. Escribe 'servicios', 'tecnologias' o 'contacto'."
+};
 
+const toggleBtn = document.getElementById("chatbot-toggle");
+const chatContainer = document.getElementById("chatbot-container");
+const closeBtn = document.getElementById("close-chat");
+const sendBtn = document.getElementById("send-btn");
+const userInput = document.getElementById("user-input");
+const messages = document.getElementById("chatbot-messages");
 
+// Abrir y cerrar chatbot
+toggleBtn.onclick = () => chatContainer.style.display = "flex";
+closeBtn.onclick = () => chatContainer.style.display = "none";
+
+// Enviar mensaje
+function enviarMensaje() {
+  const msg = userInput.value.trim().toLowerCase();
+  if(msg === "") return;
+
+  // Mostrar mensaje del usuario
+  messages.innerHTML += `<div class="user-msg">${msg}</div>`;
+
+  // Buscar respuesta
+  const respuesta = respuestas[msg] || respuestas["default"];
+  setTimeout(() => {
+    messages.innerHTML += `<div class="bot-msg">${respuesta}</div>`;
+    messages.scrollTop = messages.scrollHeight;
+  }, 500);
+
+  userInput.value = "";
+}
+
+sendBtn.onclick = enviarMensaje;
+userInput.addEventListener("keypress", e => {
+  if(e.key === "Enter") enviarMensaje();
+});
     

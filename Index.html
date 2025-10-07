@@ -1,564 +1,600 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SmartFactoryChain</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <title>SmartFactoryChain</title>   
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="Style.css">
+
 </head>
+
 <body>
-        <!-- Navegacion -->
-<nav id="barra-navegacion" class="navbar navbar-expand-lg fondo-barra-navegacion flex-grow-1 fixed-top sombra-barra-navegacion">
-    <div class="container-fluid d-flex align-items-center justify-content-between">        
-        <h5 class="titulo-navegador fw-bold" id="titulo-navegador" >Smart Factory Chain</h5>        
-        <button id="boton-alternar-navegacion" class="navbar-toggler boton-alternar-navegacion" type="button" data-bs-toggle="collapse" data-bs-target="#menu-navegacion" aria-controls="menu-navegacion" aria-expanded="false" aria-label="Alternar navegación">
-            <span class="navbar-toggler-icon icono-alternar-navegacion" aria-hidden="true"></span>
-        </button>
-        <div class="collapse navbar-collapse justify-content-center" id="menu-navegacion">
-            <ul class="navbar-nav d-flex justify-content-center mb-2 mb-lg-0 lista-navegacion" style="width:100%">
-                <li class="nav-item elemento-navegacion">
-                    <a class="nav-link activo" aria-current="page" href="#seccion-inicio" id="enlace-inicio">Inicio</a>
-                </li>
-                <li class="nav-item elemento-navegacion">
-                    <a class="nav-link" href="#seccion-nosotros" id="enlace-nosotros">Nosotros</a>
-                </li>
-                <li class="nav-item elemento-navegacion">
-                    <a class="nav-link" href="#seccion-tecnologias" id="enlace-tecnologias">Tecnologías</a>
-                </li>
-                <li class="nav-item elemento-navegacion">
-                    <a class="nav-link" href="#seccion-servicios" id="enlace-servicios">Servicios</a>
-                </li>
-                <li class="nav-item elemento-navegacion">
-                    <a class="nav-link" href="#seccion-caracteristicas" id="enlace-caracteristicas">Características</a>
-                </li>
-            </ul>
+    <!--Navegacion -->
+    <nav id="barra-navegacion"
+        class="navbar navbar-expand-lg fondo-barra-navegacion flex-grow-1 fixed-top sombra-barra-navegacion">
+        <div class="container-fluid d-flex align-items-center justify-content-between">
+            <h5 class="titulo-navegador fw-bold" id="titulo-navegador">Smart Factory Chain</h5>
+            <button id="boton-alternar-navegacion" class="navbar-toggler boton-alternar-navegacion" type="button"
+                data-bs-toggle="collapse" data-bs-target="#menu-navegacion" aria-controls="menu-navegacion"
+                aria-expanded="false" aria-label="Alternar navegación">
+                <span class="navbar-toggler-icon icono-alternar-navegacion" aria-hidden="true"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="menu-navegacion">
+                <ul class="navbar-nav d-flex justify-content-center mb-2 mb-lg-0 lista-navegacion" style="width:100%">
+                    <li class="nav-item elemento-navegacion">
+                        <a class="nav-link activo" aria-current="page" href="#seccion-inicio"
+                            id="enlace-inicio">Inicio</a>
+                    </li>
+                    <li class="nav-item elemento-navegacion">
+                        <a class="nav-link" href="#seccion-nosotros" id="enlace-nosotros">Nosotros</a>
+                    </li>
+                    <li class="nav-item elemento-navegacion">
+                        <a class="nav-link" href="#seccion-tecnologias" id="enlace-tecnologias">Tecnologías</a>
+                    </li>
+                    <li class="nav-item elemento-navegacion">
+                        <a class="nav-link" href="#seccion-servicios" id="enlace-servicios">Servicios</a>
+                    </li>
+                    <li class="nav-item elemento-navegacion">
+                        <a class="nav-link" href="#seccion-caracteristicas"
+                            id="enlace-caracteristicas">Características</a>
+                    </li>
+                </ul>
+            </div>
+            <a href="tel:+51000000000" class="telefono-navegacion me-3 fw-bold text-decoration-none"
+                id="telefono-navegacion">
+                <img src="Imagenes/llamar.png" alt="Teléfono" class="icono-telefono">
+                +51 942 149 115
+            </a>
+            <a href="#seccion-contacto" class="btn boton-contacto" id="boton-contacto-navegacion">Contacto</a>
         </div>
-        <a href="tel:+51000000000" class="telefono-navegacion me-3 fw-bold text-decoration-none" id="telefono-navegacion">
-        <img src="Imagenes/llamar.png" alt="Teléfono" class="icono-telefono"> 
-        +51 942 149 115
-        </a>                
-        <a href="#seccion-contacto" class="btn boton-contacto" id="boton-contacto-navegacion">Contacto</a>
-    </div>
-</nav>        
-        
-<!-- Sección de Inicio -->
-<section class="seccion-inicio d-flex justify-content-center align-items-center text-center  pt-5" id="seccion-inicio">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-10">
-                <!--<h1 class="titulo-inicio fw-bold" id="titulo-inicio">
-                    <span style="display:block; padding-top:5.5rem;">Smart Factory Chain</span>                    
-                </h1>-->                           
-                <div class="titulo-blanco"> 
-                    <h1 class="titulo-blanco fw-bold" id="titulo-blanco">
-                    <span style="display:block; padding-top:3rem;">Transformamos</span>                    
-                </h1>                
+    </nav>
+
+    <!-- Sección de Inicio -->
+    <section class="seccion-inicio d-flex justify-content-center align-items-center text-center  pt-5"
+        id="seccion-inicio">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-10">
+                    <div class="titulo-blanco">
+                        <h1 class="titulo-blanco fw-bold" id="titulo-blanco">
+                            <span style="display:block; padding-top:3rem;">Transformamos</span>
+                        </h1>
+                    </div>
+                    <div class="subtitulo-gradiente">
+                        <h1 class="titulo-inicio fw-bold" id="titulo-inicio">
+                            <span style="display:block; ">tu futuro digital</span>
+                        </h1>
+                    </div>
+                    <p class="descripcion-inicio" id="descripcion-inicio">
+                        Conectamos personas, máquinas y procesos con tecnologías avanzadas para optimizar tu producción,
+                        reducir costos y crear soluciones personalizadas que impulsen tu negocio hacia la Industria 4.0
+                    </p>
+                    <a href="#seccion-contacto" class="btn btn-transformacion mt-3" id="boton-transformacion">
+                        Comienza tu transformación
+                    </a>
+                    <div class="fila-indicadores d-flex flex-wrap align-items-center justify-content-center mt-4"
+                        id="fila-indicadores-inicio">
+                        <div class="indicador me-4 d-flex align-items-center">
+                            <img src="Imagenes/eficiencia.png" alt="Logo eficiencia" class="logos-inicio me-3">
+                            <span class="indicador-texto">Alta eficiencia</span>
+                        </div>
+                        <div class="indicador me-4 d-flex align-items-center">
+                            <img src="Imagenes/seguridad.png" alt="Logo seguridad" class="logos-inicio me-3">
+                            <span class="indicador-texto">Seguridad garantizada</span>
+                        </div>
+                        <div class="indicador me-4 d-flex align-items-center">
+                            <img src="Imagenes/confianza.png" alt="Logo confianza" class="logos-inicio me-3">
+                            <span class="indicador-texto">Confianza de las empresas</span>
+                        </div>
+                    </div>
+                    <p class="info-rapida text-center mt-3 mb-1" id="info-rapida-inicio">Consulta gratuita • Sin
+                        compromiso • Respuesta en 24h</p>
                 </div>
-                <div class="subtitulo-gradiente">
-                    <h1 class="titulo-inicio fw-bold" id="titulo-inicio">
-                    <span style="display:block; ">tu futuro digital</span>                    
-                </h1>  
-                </div>                
-                <p class="descripcion-inicio" id="descripcion-inicio">
-                Conectamos personas, máquinas y procesos con tecnologías avanzadas para optimizar tu producción, 
-                reducir costos y crear soluciones personalizadas que impulsen tu negocio hacia la Industria 4.0
-                </p>
-                <a href="#seccion-contacto" class="btn btn-transformacion mt-3" id="boton-transformacion">
-                Comienza tu transformación
-                </a>                    
-                <div class="fila-indicadores d-flex flex-wrap align-items-center justify-content-center mt-4" id="fila-indicadores-inicio">
-                    <div class="indicador me-4 d-flex align-items-center">
-                        <img src="Imagenes/eficiencia.png" alt="Logo eficiencia" class="logos-inicio me-3">
-                        <span class="indicador-texto">Alta eficiencia</span>
-                    </div>
-                    <div class="indicador me-4 d-flex align-items-center">
-                        <img src="Imagenes/seguridad.png" alt="Logo seguridad" class="logos-inicio me-3">
-                        <span class="indicador-texto">Seguridad garantizada</span>
-                    </div>
-                    <div class="indicador me-4 d-flex align-items-center">
-                        <img src="Imagenes/confianza.png" alt="Logo confianza" class="logos-inicio me-3">
-                        <span class="indicador-texto">Confianza de las empresas</span>
-                    </div>                        
-                </div>                    
-                <p class="info-rapida text-center mt-3 mb-1" id="info-rapida-inicio">Consulta gratuita • Sin compromiso • Respuesta en 24h</p>                
             </div>
         </div>
-    </div>
-</section>             
+    </section>
 
-<!-- Sección Nosotros -->
-<section class="seccion-nosotros container mt-5 mb-5" id="seccion-nosotros">
-    <h2 class="titulo-nosotros-principal text-center" id="titulo-nosotros-principal">
-        <span style="display:block; padding-top:6rem;">Impulsamos el cambio conectando ideas, tecnología y talento para crear un futuro más inteligente.</span>                
-    </h2>
-    <div class="row mt-4 align-items-center mb-4">
-        <div class="col-md-6 about-block mision-animar">
-            <h3 class="titulo-nosotros" id="titulo-mision">Misión</h3>
-            <p class="parrafo-nosotros fs-4" id="parrafo-mision">
-                Nuestra misión es impulsar la transformación digital de las empresas, integrando tecnologías inteligentes que optimicen procesos, mejoren la productividad y generen valor sostenible para nuestros clientes y la sociedad.
-            </p>
-        </div>
-        <div class="col-md-6">
-            <video class="video-nosotros" id="video-mision" src="Videos/Mision.mp4" width="100%" autoplay muted loop></video>
-        </div>
-    </div>
-    <div class="row align-items-center mb-4">
-        <div class="col-md-6">
-            <video class="video-nosotros" id="video-vision" src="Videos/Vision.mp4" width="100%" autoplay muted loop></video>
-        </div>
-        <div class="col-md-6">
-            <div class="about-block vision-animar">
-                <h3 class="titulo-nosotros" id="titulo-vision">Visión</h3>
-                <p class="parrafo-nosotros fs-4" id="parrafo-vision">
-                    Ser líderes en innovación tecnológica, reconocidos por crear soluciones avanzadas que conectan personas, máquinas y datos, contribuyendo al desarrollo de la Industria 4.0 en Latinoamérica y el mundo.
+    <!-- Sección Nosotros -->
+    <section class="seccion-nosotros container mt-5 mb-5" id="seccion-nosotros">
+        <h2 class="titulo-nosotros-principal text-center" id="titulo-nosotros-principal">
+            <span style="display:block; padding-top:6rem;">Impulsamos el cambio conectando ideas, tecnología y talento
+                para crear un futuro más inteligente.</span>
+        </h2>
+        <div class="row mt-4 align-items-center mb-4">
+            <div class="col-md-6 about-block mision-animar">
+                <h3 class="titulo-nosotros" id="titulo-mision">Misión</h3>
+                <p class="parrafo-nosotros fs-4" id="parrafo-mision">
+                    Nuestra misión es impulsar la transformación digital de las empresas, integrando tecnologías
+                    inteligentes que optimicen procesos, mejoren la productividad y generen valor sostenible para
+                    nuestros clientes y la sociedad.
                 </p>
             </div>
+            <div class="col-md-6">
+                <video class="video-nosotros" id="video-mision" src="Videos/Mision.mp4" width="100%" autoplay muted
+                    loop></video>
+            </div>
         </div>
-    </div>
-</section>
-
-<!-- Sección Tecnologías -->
-<section class="seccion-tecnologias container mt-5" id="seccion-tecnologias">
-    <h2 class="titulo-tecnologias text-center mb-4" id="titulo-tecnologias">
-        <span style="display:block; padding-top:6rem;">Tecnologías Avanzadas</span>
-    </h2>
-    <p class="descripcion-tecnologias text-center mb-4" style="font-size:1.25rem;">
-        Dominamos las tecnologías más avanzadas para crear soluciones que transforman industrias completas y optimizan cada proceso de tu organización.
-    </p>
-    <div class="row justify-content-center">
-        <div class="col-md-4 mb-4">
-            <div class="tarjeta tarjeta-tecnologia h-100 text-center p-3">
-                    <div>
-                    <div class="d-flex align-items-center">
-                        <img src="Imagenes/wifi.png" alt="Logo IoT" class="logos-tecnologia me-3">
-                        <div class="flex-grow-1">
-                            <h5 class="titulo-cuadro mb-1">Internet of Things (IoT)</h5>
-                            <p class="texto-cuadro">Todo conectado, todo inteligente</p>
-                        </div>
-                    </div>
+        <div class="row align-items-center mb-4">
+            <div class="col-md-6">
+                <video class="video-nosotros" id="video-vision" src="Videos/Vision.mp4" width="100%" autoplay muted
+                    loop></video>
+            </div>
+            <div class="col-md-6">
+                <div class="about-block vision-animar">
+                    <h3 class="titulo-nosotros" id="titulo-vision">Visión</h3>
+                    <p class="parrafo-nosotros fs-4" id="parrafo-vision">
+                        Ser líderes en innovación tecnológica, reconocidos por crear soluciones avanzadas que conectan
+                        personas, máquinas y datos, contribuyendo al desarrollo de la Industria 4.0 en Latinoamérica y
+                        el mundo.
+                    </p>
                 </div>
             </div>
         </div>
-        <div class="col-md-4 mb-4">
-            <div class="tarjeta tarjeta-tecnologia h-100 text-center p-3">
-                    <div>
-                    <div class="d-flex align-items-center">
-                        <img src="Imagenes/bigData.png" alt="Logo Big Data" class="logos-tecnologia me-3">
-                        <div class="flex-grow-1">
-                            <h5 class="titulo-cuadro mb-1">Big Data</h5>
-                            <p class="texto-cuadro">Transforma datos en valor</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4 mb-4">
-            <div class="tarjeta tarjeta-tecnologia h-100 text-center p-3">
-                    <div>
-                    <div class="d-flex align-items-center">
-                        <img src="Imagenes/inteligenciaArtificial.png" alt="Logo Inteligencia Artificial" class="logos-tecnologia me-3">
-                        <div class="flex-grow-1">
-                            <h5 class="titulo-cuadro mb-1">Inteligencia Artificial</h5>
-                            <p class="texto-cuadro">Innovación con inteligencia digital</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4 mb-4">
-            <div class="tarjeta tarjeta-tecnologia h-100 text-center p-3">
-                    <div>
-                    <div class="d-flex align-items-center">
-                        <img src="Imagenes/robotica.png" alt="Logo Robótica" class="logos-tecnologia me-3">
-                        <div class="flex-grow-1">
-                            <h5 class="titulo-cuadro mb-1">Robótica Avanzada</h5>
-                            <p class="texto-cuadro">Máquinas que transforman industrias</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4 mb-4">
-            <div class="tarjeta tarjeta-tecnologia h-100 text-center p-3">
-                    <div>
-                    <div class="d-flex align-items-center">
-                        <img src="Imagenes/computacionNube.png" alt="Logo Cloud" class="logos-tecnologia me-3">
-                        <div class="flex-grow-1">
-                            <h5 class="titulo-cuadro mb-1">Cloud Computing</h5>
-                            <p class="texto-cuadro">Flexibilidad, escalabilidad y poder</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4 mb-4">
-            <div class="tarjeta tarjeta-tecnologia h-100 text-center p-3">
-                    <div>
-                    <div class="d-flex align-items-center">
-                        <img src="Imagenes/bitcoin.png" alt="Logo Blockchain" class="logos-tecnologia me-3">
-                        <div class="flex-grow-1">
-                            <h5 class="titulo-cuadro mb-1">Blockchain</h5>
-                            <p class="texto-cuadro">Seguridad en cada bloque</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4 mb-4">
-            <div class="tarjeta tarjeta-tecnologia h-100 text-center p-3">
-                    <div>
-                    <div class="d-flex align-items-center">
-                        <img src="Imagenes/realidadAumentada.png" alt="Logo Realidad Aumentada" class="logos-tecnologia me-3">
-                        <div class="flex-grow-1">
-                            <h5 class="titulo-cuadro mb-1">Realidad Aumentada</h5>
-                            <p class="texto-cuadro">Vive lo digital en físico</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4 mb-4">
-            <div class="tarjeta tarjeta-tecnologia h-100 text-center p-3">
-                    <div>
-                    <div class="d-flex align-items-center">
-                        <img src="Imagenes/desarrolloMovil.png" alt="Logo Desarrollo Móvil" class="logos-tecnologia me-3">
-                        <div class="flex-grow-1">
-                            <h5 class="titulo-cuadro mb-1">Desarrollo Móvil</h5>
-                            <p class="texto-cuadro">Apps que conectan mundos</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4 mb-4">
-            <div class="tarjeta tarjeta-tecnologia h-100 text-center p-3">
-                    <div>
-                    <div class="d-flex align-items-center">
-                        <img src="Imagenes/videojuego.png" alt="Logo Videojuegos" class="logos-tecnologia me-3">
-                        <div class="flex-grow-1">
-                            <h5 class="titulo-cuadro mb-1">Videojuegos</h5>
-                            <p class="texto-cuadro">Mundos virtuales a tu alcance</p>
-                        </div>
-                    </div>
-                </div>
-            </div>                    
-        </div>          
-        <h4 class="titulo-informativo text-center mt-4">¿No sabes cuál tecnología elegir?</h4>
-        <p class="info-rapida text-center mt-3 mb-1" id="info-rapida-inicio">Nuestros expertos te ayudan a seleccionar la combinación perfecta de tecnologías para tu industria</p>  
-        
-        <div class="fila-metricas row text-center mt-5" id="fila-metricas-tecnologias">
-            <div class="columna-metrica col-md-3 mb-3">
-                <h3 class="numero-metrica fw-bold text-primary" id="tecnologias-dominadas">9+</h3>
-                <p>Tecnologías Dominadas</p>
-            </div>
-            <div class="columna-metrica col-md-3 mb-3">
-                <h3 class="numero-metrica fw-bold" id="implementaciones" style="color: purple;">150+</h3>
-                <p>Implementaciones</p>
-            </div>
-            <div class="columna-metrica col-md-3 mb-3">
-                <h3 class="numero-metrica fw-bold text-success" id="tasa-exito">98%</h3>
-                <p>Tasa de Éxito</p>
-            </div>
-            <div class="columna-metrica col-md-3 mb-3">
-                <h3 class="numero-metrica fw-bold text-danger" id="soporte-tecnico">24/7</h3>
-                <p>Soporte Técnico</p>
-            </div>
-        </div>
-</section>
+    </section>
 
-<!-- Sección Servicios -->
-<section class="seccion-servicios container mt-5 mb-5" id="seccion-servicios">
-  <h2 class="titulo-servicios text-center mb-4" id="titulo-servicios">
-    <span style="display:block; padding-top:6rem;">
-      Impulsa tu empresa con soluciones, apps y videojuegos hechos para el futuro digital
-    </span>
-  </h2>
-  <p class="text-center mb-5">
-    Desde aplicaciones web hasta videojuegos, creamos experiencias digitales que impulsan la innovación y transforman la manera de hacer negocios.
-  </p>  
-  <div class="row fila-servicio align-items-center mb-5">
-    <div class="col-md-5">
-      <img src="Imagenes/SE4.0.png" alt="Soluciones Empresariales" class="imagen-servicio img-fluid" width="60%">
-    </div>
-    <div class="col-md-7">
-      <h3>Soluciones Empresariales 4.0</h3>
-      <p class="subtitulo-servicio">Soluciones inteligentes y escalables para la industria</p>
-      <p class="descripcion-servicio">
-        Transformamos tu empresa con tecnologías de última generación para optimizar procesos y aumentar la productividad en la era digital.
-      </p>
-      <h6 class="texto-tecnologias">TECNOLOGÍAS CLAVE</h6>
-      <div class="lista-tecnologias mb-3">
-        <div class="item-tecnologia"><span class="punto bg-success rounded-circle me-2"></span> IoT Industrial</div>
-        <div class="item-tecnologia"><span class="punto bg-success rounded-circle me-2"></span> Inteligencia Artificial</div>
-        <div class="item-tecnologia"><span class="punto bg-success rounded-circle me-2"></span> Big Data</div>
-      </div>
-      <a href="#seccion-contacto" class="btn boton-cotizar">Solicitar Cotización</a>
-    </div>
-  </div>  
-  <div class="row fila-servicio align-items-center mb-5">
-    <div class="col-md-5">
-      <img src="Imagenes/apps2.png" alt="Desarrollo de Apps" class="imagen-servicio img-fluid" width="60%">
-    </div>
-    <div class="col-md-7">
-      <h3>Desarrollo de Apps Móviles y Web</h3>
-      <p class="subtitulo-servicio">Aplicaciones web modernas y escalables</p>
-      <p class="descripcion-servicio">
-        Creamos aplicaciones web progresivas con tecnologías de vanguardia, arquitecturas cloud-native y experiencias de usuario excepcionales.
-      </p>
-      <h6 class="texto-tecnologias">TECNOLOGÍAS CLAVE</h6>
-      <div class="lista-tecnologias mb-3">
-        <div class="item-tecnologia"><span class="punto bg-success rounded-circle me-2"></span> React, Next.js, TypeScript</div>
-        <div class="item-tecnologia"><span class="punto bg-success rounded-circle me-2"></span> PWA y responsive design</div>
-        <div class="item-tecnologia"><span class="punto bg-success rounded-circle me-2"></span> Arquitectura microservicios</div>
-      </div>
-      <a href="#seccion-contacto" class="btn boton-cotizar">Solicitar Cotización</a>
-    </div>
-  </div>  
-  <div class="row fila-servicio align-items-center">
-    <div class="col-md-5">
-      <img src="Imagenes/DV.png" alt="Desarrollo de Videojuegos" class="imagen-servicio img-fluid" width="60%">
-    </div>
-    <div class="col-md-7">
-      <h3>Desarrollo de Videojuegos</h3>
-      <p class="subtitulo-servicio">Experiencias interactivas inmersivas</p>
-      <p class="descripcion-servicio">
-        Diseñamos y desarrollamos videojuegos cautivadores que combinan creatividad con tecnología de punta para crear experiencias únicas.
-      </p>
-      <h6 class="texto-tecnologias">TECNOLOGÍAS CLAVE</h6>
-      <div class="lista-tecnologias mb-3">
-        <div class="item-tecnologia"><span class="punto bg-success rounded-circle me-2"></span> Unity</div>
-        <div class="item-tecnologia"><span class="punto bg-success rounded-circle me-2"></span> Unreal Engine</div>
-        <div class="item-tecnologia"><span class="punto bg-success rounded-circle me-2"></span> 3D y VR</div>
-      </div>
-      <a href="#seccion-contacto" class="btn boton-cotizar">Solicitar Cotización</a>
-    </div>
-  </div>
-</section>
-
-<!-- Sección Características -->
-<section class="seccion-caracteristicas container mt-5 mb-5" id="seccion-caracteristicas">
-    <h2 class="titulo-caracteristicas text-center mb-4">
-        <span style="display:block; padding-top:6rem;">¿Por qué elegir Smart Factory Chain?</span>
-    </h2>
-    <p class="text-center mb-5" style="font-size:1.5rem;">
-        Cada característica está diseñada para maximizar la eficiencia, reducir costos y crear una ventaja competitiva sostenible en el mercado digital.
-    </p>
-    <div id="carrusel-caracteristicas" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <div class="tarjeta-caracteristica p-4 rounded shadow text-center h-100">
-                    <img src="Imagenes/innova.png" alt="Innovación Continua" class="img-fluid mb-3" style="max-height:180px;">
-                    <h3 class="fw-bold mb-3">Innovación Continua</h3>
-                    <p class="mb-3">Nos mantenemos a la vanguardia tecnológica para ofrecer soluciones innovadoras.</p>
-                    <p><strong>95%</strong> clientes satisfechos con innovaciones</p>
-                    <a href="#seccion-contacto" class="btn btn-primary">Implementar</a>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <div class="tarjeta-caracteristica p-4 rounded shadow text-center h-100">
-                    <img src="Imagenes/seguridadAvanzada.png" alt="Seguridad Avanzada" class="img-fluid mb-3" style="max-height:180px;">
-                    <h3 class="fw-bold mb-3">Seguridad Avanzada</h3>
-                    <p class="mb-3">Implementamos las mejores prácticas y tecnologías para proteger tus datos y sistemas.</p>
-                    <p><strong>99.9%</strong> uptime garantizado</p>
-                    <a href="#seccion-contacto" class="btn btn-primary">Implementar</a>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <div class="tarjeta-caracteristica p-4 rounded shadow text-center h-100">
-                    <img src="Imagenes/operador.png" alt="Soporte 24/7" class="img-fluid mb-3" style="max-height:180px;">
-                    <h3 class="fw-bold mb-3">Soporte 24/7</h3>
-                    <p class="mb-3">Nuestro equipo de expertos está disponible en todo momento para asistirte.</p>
-                    <p><strong>&lt; 15 min</strong> tiempo de respuesta promedio</p>
-                    <a href="#seccion-contacto" class="btn btn-primary">Implementar</a>
-                </div>
-            </div>
-        </div>       
-        <button class="carousel-control-prev" type="button" data-bs-target="#carrusel-caracteristicas" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Anterior</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carrusel-caracteristicas" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Siguiente</span>
-        </button>
-        </div>   
-        <h4 class="titulo-informativo text-center mt-4">¿Listo para experimentar estas características?</h4>
-        <p class="info-rapida text-center mt-3 mb-1" id="info-rapida-inicio">Agenda una demo personalizada y descubre cómo podemos transformar tu empresa</p>            
-        <div class="fila-metricas row text-center mt-5" id="fila-metricas-tecnologias"> 
-        <div class="fila-metricas row text-center mt-5" id="fila-metricas-tecnologias">
-            <div class="columna-metrica col-md-3 mb-3">
-                <h3 class="numero-metrica fw-bold text-primary" id="tecnologias-dominadas">150+</h3>
-                <p>Empresas Transformadas</p>
-            </div>
-            <div class="columna-metrica col-md-3 mb-3">
-                <h3 class="numero-metrica fw-bold text-primary" id="implementaciones">12</h3>
-                <p>Departamentos con Presencia</p>
-            </div>
-            <div class="columna-metrica col-md-3 mb-3">
-                <h3 class="numero-metrica fw-bold text-primary" id="tasa-exito">98%</h3>
-                <p>Tasa de Éxito</p>
-            </div>
-            <div class="columna-metrica col-md-3 mb-3">
-                <h3 class="numero-metrica fw-bold text-primary" id="soporte-tecnico">24/7</h3>
-                <p>Soporte Técnico</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-
-<!-- Sección Contacto -->
-<section class="seccion-contacto container mt-5 mb-5" id="seccion-contacto">
-    <h2 class="titulo-contacto text-center mb-4" id="titulo-contacto">
-        <span style="display:block; padding-top:6rem;">¿Listo para transformar tu negocio?</span>  
-    </h2>  
-    <p class="descripcion-contacto text-center mb-4" style="font-size:1.25rem;">
-        Contáctanos hoy mismo y descubre cómo nuestras soluciones tecnológicas pueden llevar tu empresa al siguiente nivel.
-    </p>
-
-    <div class="row g-4">        
-        <div class="col-md-5">
-            <div class="tarjeta-contacto p-4 ">
-                <h4 class="fw-bold mb-3">Información de contacto</h4>
-                <p><strong>Oficina Principal</strong><br>
-                CAL. Nicolas De Arriola NRO. 640<br>
-                Cajamarca</p>
-
-                <p><strong>Teléfono</strong><br>
-                +51 942 149 115</p>
-
-                <p><strong>Email</strong><br>
-                contacto@smartfactorychain.com</p>
-
-                <p><strong>Horarios de atención</strong><br>
-                Lunes a Viernes: 9:00 - 18:00<br>
-                Soporte 24/7 para clientes</p>                
-            </div>
-        </div>
-       
-        <div class="col-md-7">
-            <div class="tarjeta-formulario p-4">
-                <h4 class="fw-bold mb-3">Solicita una consulta</h4>
-                <form id="formulario-contacto">
-                    <div class="row">
-                        <div class="col-md-6 mb-3">
-                            <label for="nombre" class="form-label">Nombre completo</label>
-                            <input type="text" class="form-control" id="nombre" placeholder="" required>
-                        </div>
-                        <div class="col-md-6 mb-3">
-                            <label for="email" class="form-label">Email corporativo</label>
-                            <input type="email" class="form-control" id="email" placeholder="" required>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-6 mb-3">
-                            <label for="empresa" class="form-label">Empresa</label>
-                            <input type="text" class="form-control" id="empresa" placeholder="" required>
-                        </div>
-                        <div class="col-md-6 mb-3">
-                            <label for="telefono" class="form-label">Teléfono</label>
-                            <input type="text" class="form-control" id="telefono" placeholder="">
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-6 mb-3">
-                            <label for="servicio" class="form-label">Servicio de interés</label>
-                            <select id="servicio" class="form-select">
-                                <option selected>Selecciona un servicio</option>
-                                <option value="1">Consultoría</option>
-                                <option value="2">Desarrollo</option>
-                                <option value="3">Soporte</option>
-                            </select>
-                        </div>
-                        <div class="col-md-6 mb-3">
-                            <label for="empleados" class="form-label">Número de empleados</label>
-                            <select id="empleados" class="form-select">
-                                <option selected>Tamaño de empresa</option>
-                                <option value="1">1 - 10</option>
-                                <option value="2">11 - 50</option>
-                                <option value="3">51 - 200</option>
-                                <option value="4">200+</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="mensaje" class="form-label">Cuéntanos sobre tu proyecto</label>
-                        <textarea class="form-control" id="mensaje" rows="4" placeholder="Describe tu situación actual, desafíos y objetivos..."></textarea>
-                    </div>
-
-                    <div class="mb-3 form-check">
-                        <input type="checkbox" class="form-check-input" id="actualizaciones">
-                        <label class="form-check-label" for="actualizaciones">
-                            Quiero recibir actualizaciones y contenido especializado sobre Industria 4.0
-                        </label>
-                    </div>
-
-                    <button type="submit" class="btn boton-enviar w-100 text-white fw-bold">
-                        Enviar solicitud
-                    </button>
-                </form>                
-            </div>
-        </div>
-    </div>
-</section>
-<!-- Footer -->
-<footer class="pie-pagina text-dark pt-5" id="pie-pagina">
-  <div class="container-fluid text-light py-4">
-    <div class="row">
-      <div class="col-md-3 mb-4">
-        <h5 class="titulo-footer fw-bold" id="titulo-footer" >Smart Factory Chain</h5>
-        <p>
-          Transformamos empresas manufactureras con tecnología de vanguardia, 
-          conectando el presente con el futuro de la industria.
+    <!-- Sección Tecnologías -->
+    <section class="seccion-tecnologias container mt-5" id="seccion-tecnologias">
+        <h2 class="titulo-tecnologias text-center mb-4" id="titulo-tecnologias">
+            <span style="display:block; padding-top:6rem;">Tecnologías Avanzadas</span>
+        </h2>
+        <p class="descripcion-tecnologias text-center mb-4" style="font-size:1.25rem;">
+            Dominamos las tecnologías más avanzadas para crear soluciones que transforman industrias completas y
+            optimizan cada proceso de tu organización.
         </p>
-      </div>
-      <div class="col-md-3 mb-4">
-        <h6 class="fw-bold">Servicios</h6>
-        <ul class="list-unstyled">
-          <li>Consultoría Digital</li>
-          <li>Implementación IoT</li>
-          <li>Automatización</li>
-          <li>Análisis de Datos</li>
-          <li>Mantenimiento Predictivo</li>
-        </ul>
-      </div>
-      <div class="col-md-3 mb-4">
-        <h6 class="fw-bold">Sectores</h6>
-        <ul class="list-unstyled">
-          <li>Manufactura</li>
-          <li>Automotriz</li>
-          <li>Alimentaria</li>
-          <li>Textil</li>
-          <li>Química</li>
-          <li>Farmacéutica</li>
-        </ul>
-      </div>      
-      <div class="col-md-3 mb-4">
-        <h6 class="fw-bold">Contacto</h6>
-        <ul class="list-unstyled">
-          <li>CAL. Nicolas De Arriola NRO. 640</li>
-          <li>+51 942 149 115</li>
-          <li>contacto@smartfactorychain.com</li>
-          <li><span class="fw-bold">Disponible 24/7</span></li>
-        </ul>
-      </div>    
-    </div>
-    <hr>
-    <div class="text-center">
-      <p class="mb-0">© 2023 Smart Factory Chain. Todos los derechos reservados.</p>
-    </div>
-  </div>
-</footer>
+        <div class="row justify-content-center">
+            <div class="col-md-4 mb-4">
+                <div class="tarjeta tarjeta-tecnologia h-100 text-center p-3">
+                    <div>
+                        <div class="d-flex align-items-center">
+                            <img src="Imagenes/wifi.png" alt="Logo IoT" class="logos-tecnologia me-3">
+                            <div class="flex-grow-1">
+                                <h5 class="titulo-cuadro mb-1">Internet of Things (IoT)</h5>
+                                <p class="texto-cuadro">Todo conectado, todo inteligente</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="tarjeta tarjeta-tecnologia h-100 text-center p-3">
+                    <div>
+                        <div class="d-flex align-items-center">
+                            <img src="Imagenes/bigData.png" alt="Logo Big Data" class="logos-tecnologia me-3">
+                            <div class="flex-grow-1">
+                                <h5 class="titulo-cuadro mb-1">Big Data</h5>
+                                <p class="texto-cuadro">Transforma datos en valor</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="tarjeta tarjeta-tecnologia h-100 text-center p-3">
+                    <div>
+                        <div class="d-flex align-items-center">
+                            <img src="Imagenes/inteligenciaArtificial.png" alt="Logo Inteligencia Artificial"
+                                class="logos-tecnologia me-3">
+                            <div class="flex-grow-1">
+                                <h5 class="titulo-cuadro mb-1">Inteligencia Artificial</h5>
+                                <p class="texto-cuadro">Innovación con inteligencia digital</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="tarjeta tarjeta-tecnologia h-100 text-center p-3">
+                    <div>
+                        <div class="d-flex align-items-center">
+                            <img src="Imagenes/robotica.png" alt="Logo Robótica" class="logos-tecnologia me-3">
+                            <div class="flex-grow-1">
+                                <h5 class="titulo-cuadro mb-1">Robótica Avanzada</h5>
+                                <p class="texto-cuadro">Máquinas que transforman industrias</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="tarjeta tarjeta-tecnologia h-100 text-center p-3">
+                    <div>
+                        <div class="d-flex align-items-center">
+                            <img src="Imagenes/computacionNube.png" alt="Logo Cloud" class="logos-tecnologia me-3">
+                            <div class="flex-grow-1">
+                                <h5 class="titulo-cuadro mb-1">Cloud Computing</h5>
+                                <p class="texto-cuadro">Flexibilidad, escalabilidad y poder</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="tarjeta tarjeta-tecnologia h-100 text-center p-3">
+                    <div>
+                        <div class="d-flex align-items-center">
+                            <img src="Imagenes/bitcoin.png" alt="Logo Blockchain" class="logos-tecnologia me-3">
+                            <div class="flex-grow-1">
+                                <h5 class="titulo-cuadro mb-1">Blockchain</h5>
+                                <p class="texto-cuadro">Seguridad en cada bloque</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="tarjeta tarjeta-tecnologia h-100 text-center p-3">
+                    <div>
+                        <div class="d-flex align-items-center">
+                            <img src="Imagenes/realidadAumentada.png" alt="Logo Realidad Aumentada"
+                                class="logos-tecnologia me-3">
+                            <div class="flex-grow-1">
+                                <h5 class="titulo-cuadro mb-1">Realidad Aumentada</h5>
+                                <p class="texto-cuadro">Vive lo digital en físico</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="tarjeta tarjeta-tecnologia h-100 text-center p-3">
+                    <div>
+                        <div class="d-flex align-items-center">
+                            <img src="Imagenes/desarrolloMovil.png" alt="Logo Desarrollo Móvil"
+                                class="logos-tecnologia me-3">
+                            <div class="flex-grow-1">
+                                <h5 class="titulo-cuadro mb-1">Desarrollo Móvil</h5>
+                                <p class="texto-cuadro">Apps que conectan mundos</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="tarjeta tarjeta-tecnologia h-100 text-center p-3">
+                    <div>
+                        <div class="d-flex align-items-center">
+                            <img src="Imagenes/videojuego.png" alt="Logo Videojuegos" class="logos-tecnologia me-3">
+                            <div class="flex-grow-1">
+                                <h5 class="titulo-cuadro mb-1">Videojuegos</h5>
+                                <p class="texto-cuadro">Mundos virtuales a tu alcance</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h4 class="titulo-informativo text-center mt-4">¿No sabes cuál tecnología elegir?</h4>
+            <p class="info-rapida text-center mt-3 mb-1" id="info-rapida-inicio">Nuestros expertos te ayudan a
+                seleccionar la combinación perfecta de tecnologías para tu industria</p>
+
+            <div class="fila-metricas row text-center mt-5" id="fila-metricas-tecnologias">
+                <div class="columna-metrica col-md-3 mb-3">
+                    <h3 class="numero-metrica fw-bold text-primary" id="tecnologias-dominadas">9+</h3>
+                    <p>Tecnologías Dominadas</p>
+                </div>
+                <div class="columna-metrica col-md-3 mb-3">
+                    <h3 class="numero-metrica fw-bold" id="implementaciones" style="color: purple;">150+</h3>
+                    <p>Implementaciones</p>
+                </div>
+                <div class="columna-metrica col-md-3 mb-3">
+                    <h3 class="numero-metrica fw-bold text-success" id="tasa-exito">98%</h3>
+                    <p>Tasa de Éxito</p>
+                </div>
+                <div class="columna-metrica col-md-3 mb-3">
+                    <h3 class="numero-metrica fw-bold text-danger" id="soporte-tecnico">24/7</h3>
+                    <p>Soporte Técnico</p>
+                </div>
+            </div>
+    </section>
+
+    <!-- Sección Servicios -->
+    <section class="seccion-servicios container mt-5 mb-5" id="seccion-servicios">
+        <h2 class="titulo-servicios text-center mb-4" id="titulo-servicios">
+            <span style="display:block; padding-top:6rem;">
+                Impulsa tu empresa con soluciones, apps y videojuegos hechos para el futuro digital
+            </span>
+        </h2>
+        <p class="text-center mb-5">
+            Desde aplicaciones web hasta videojuegos, creamos experiencias digitales que impulsan la innovación y
+            transforman la manera de hacer negocios.
+        </p>
+        <div class="row fila-servicio align-items-center mb-5">
+            <div class="col-md-5">
+                <img src="Imagenes/SE4.0.png" alt="Soluciones Empresariales" class="imagen-servicio img-fluid"
+                    width="60%">
+            </div>
+            <div class="col-md-7">
+                <h3>Soluciones Empresariales 4.0</h3>
+                <p class="subtitulo-servicio">Soluciones inteligentes y escalables para la industria</p>
+                <p class="descripcion-servicio">
+                    Transformamos tu empresa con tecnologías de última generación para optimizar procesos y aumentar la
+                    productividad en la era digital.
+                </p>
+                <h6 class="texto-tecnologias">TECNOLOGÍAS CLAVE</h6>
+                <div class="lista-tecnologias mb-3">
+                    <div class="item-tecnologia"><span class="punto bg-success rounded-circle me-2"></span> IoT
+                        Industrial</div>
+                    <div class="item-tecnologia"><span class="punto bg-success rounded-circle me-2"></span> Inteligencia
+                        Artificial</div>
+                    <div class="item-tecnologia"><span class="punto bg-success rounded-circle me-2"></span> Big Data
+                    </div>
+                </div>
+                <a href="#seccion-contacto" class="btn boton-cotizar">Solicitar Cotización</a>
+            </div>
+        </div>
+        <div class="row fila-servicio align-items-center mb-5">
+            <div class="col-md-5">
+                <img src="Imagenes/apps2.png" alt="Desarrollo de Apps" class="imagen-servicio img-fluid" width="60%">
+            </div>
+            <div class="col-md-7">
+                <h3>Desarrollo de Apps Móviles y Web</h3>
+                <p class="subtitulo-servicio">Aplicaciones web modernas y escalables</p>
+                <p class="descripcion-servicio">
+                    Creamos aplicaciones web progresivas con tecnologías de vanguardia, arquitecturas cloud-native y
+                    experiencias de usuario excepcionales.
+                </p>
+                <h6 class="texto-tecnologias">TECNOLOGÍAS CLAVE</h6>
+                <div class="lista-tecnologias mb-3">
+                    <div class="item-tecnologia"><span class="punto bg-success rounded-circle me-2"></span> React,
+                        Next.js, TypeScript</div>
+                    <div class="item-tecnologia"><span class="punto bg-success rounded-circle me-2"></span> PWA y
+                        responsive design</div>
+                    <div class="item-tecnologia"><span class="punto bg-success rounded-circle me-2"></span> Arquitectura
+                        microservicios</div>
+                </div>
+                <a href="#seccion-contacto" class="btn boton-cotizar">Solicitar Cotización</a>
+            </div>
+        </div>
+        <div class="row fila-servicio align-items-center">
+            <div class="col-md-5">
+                <img src="Imagenes/DV.png" alt="Desarrollo de Videojuegos" class="imagen-servicio img-fluid"
+                    width="60%">
+            </div>
+            <div class="col-md-7">
+                <h3>Desarrollo de Videojuegos</h3>
+                <p class="subtitulo-servicio">Experiencias interactivas inmersivas</p>
+                <p class="descripcion-servicio">
+                    Diseñamos y desarrollamos videojuegos cautivadores que combinan creatividad con tecnología de punta
+                    para crear experiencias únicas.
+                </p>
+                <h6 class="texto-tecnologias">TECNOLOGÍAS CLAVE</h6>
+                <div class="lista-tecnologias mb-3">
+                    <div class="item-tecnologia"><span class="punto bg-success rounded-circle me-2"></span> Unity</div>
+                    <div class="item-tecnologia"><span class="punto bg-success rounded-circle me-2"></span> Unreal
+                        Engine</div>
+                    <div class="item-tecnologia"><span class="punto bg-success rounded-circle me-2"></span> 3D y VR
+                    </div>
+                </div>
+                <a href="#seccion-contacto" class="btn boton-cotizar">Solicitar Cotización</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Características -->
+    <section class="seccion-caracteristicas container mt-5 mb-5" id="seccion-caracteristicas">
+        <h2 class="titulo-caracteristicas text-center mb-4">
+            <span style="display:block; padding-top:6rem;">¿Por qué elegir Smart Factory Chain?</span>
+        </h2>
+        <p class="text-center mb-5" style="font-size:1.5rem;">
+            Cada característica está diseñada para maximizar la eficiencia, reducir costos y crear una ventaja
+            competitiva sostenible en el mercado digital.
+        </p>
+        <div id="carrusel-caracteristicas" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="tarjeta-caracteristica p-4 rounded shadow text-center h-100">
+                        <img src="Imagenes/innova.png" alt="Innovación Continua" class="img-fluid mb-3"
+                            style="max-height:180px;">
+                        <h3 class="fw-bold mb-3">Innovación Continua</h3>
+                        <p class="mb-3">Nos mantenemos a la vanguardia tecnológica para ofrecer soluciones innovadoras.
+                        </p>
+                        <p><strong>95%</strong> clientes satisfechos con innovaciones</p>
+                        <a href="#seccion-contacto" class="btn btn-primary">Implementar</a>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="tarjeta-caracteristica p-4 rounded shadow text-center h-100">
+                        <img src="Imagenes/seguridadAvanzada.png" alt="Seguridad Avanzada" class="img-fluid mb-3"
+                            style="max-height:180px;">
+                        <h3 class="fw-bold mb-3">Seguridad Avanzada</h3>
+                        <p class="mb-3">Implementamos las mejores prácticas y tecnologías para proteger tus datos y
+                            sistemas.</p>
+                        <p><strong>99.9%</strong> uptime garantizado</p>
+                        <a href="#seccion-contacto" class="btn btn-primary">Implementar</a>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="tarjeta-caracteristica p-4 rounded shadow text-center h-100">
+                        <img src="Imagenes/operador.png" alt="Soporte 24/7" class="img-fluid mb-3"
+                            style="max-height:180px;">
+                        <h3 class="fw-bold mb-3">Soporte 24/7</h3>
+                        <p class="mb-3">Nuestro equipo de expertos está disponible en todo momento para asistirte.</p>
+                        <p><strong>&lt; 15 min</strong> tiempo de respuesta promedio</p>
+                        <a href="#seccion-contacto" class="btn btn-primary">Implementar</a>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carrusel-caracteristicas"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carrusel-caracteristicas"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Siguiente</span>
+            </button>
+        </div>
+        <h4 class="titulo-informativo text-center mt-4">¿Listo para experimentar estas características?</h4>
+        <p class="info-rapida text-center mt-3 mb-1" id="info-rapida-inicio">Agenda una demo personalizada y descubre
+            cómo podemos transformar tu empresa</p>
+        <div class="fila-metricas row text-center mt-5" id="fila-metricas-tecnologias">
+            <div class="fila-metricas row text-center mt-5" id="fila-metricas-tecnologias">
+                <div class="columna-metrica col-md-3 mb-3">
+                    <h3 class="numero-metrica fw-bold text-primary" id="tecnologias-dominadas">150+</h3>
+                    <p>Empresas Transformadas</p>
+                </div>
+                <div class="columna-metrica col-md-3 mb-3">
+                    <h3 class="numero-metrica fw-bold text-primary" id="implementaciones">12</h3>
+                    <p>Departamentos con Presencia</p>
+                </div>
+                <div class="columna-metrica col-md-3 mb-3">
+                    <h3 class="numero-metrica fw-bold text-primary" id="tasa-exito">98%</h3>
+                    <p>Tasa de Éxito</p>
+                </div>
+                <div class="columna-metrica col-md-3 mb-3">
+                    <h3 class="numero-metrica fw-bold text-primary" id="soporte-tecnico">24/7</h3>
+                    <p>Soporte Técnico</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
 
-    
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <!-- Sección Contacto -->
+    <section class="seccion-contacto container mt-5 mb-5" id="seccion-contacto">
+        <h2 class="titulo-contacto text-center mb-4" id="titulo-contacto">
+            <span style="display:block; padding-top:6rem;">¿Listo para transformar tu negocio?</span>
+        </h2>
+        <p class="descripcion-contacto text-center mb-4" style="font-size:1.25rem;">
+            Contáctanos hoy mismo y descubre cómo nuestras soluciones tecnológicas pueden llevar tu empresa al siguiente
+            nivel.
+        </p>
+
+        <div class="row g-4">
+            <div class="col-md-5">
+                <div class="tarjeta-contacto p-4 ">
+                    <h4 class="fw-bold mb-3">Información de contacto</h4>
+                    <p><strong>Oficina Principal</strong><br>
+                        CAL. Nicolas De Arriola NRO. 640<br>
+                        Cajamarca</p>
+
+                    <p><strong>Teléfono</strong><br>
+                        +51 942 149 115</p>
+
+                    <p><strong>Email</strong><br>
+                        contacto@smartfactorychain.com</p>
+
+                    <p><strong>Horarios de atención</strong><br>
+                        Lunes a Viernes: 9:00 - 18:00<br>
+                        Soporte 24/7 para clientes</p>
+                </div>
+            </div>
+
+            <div class="col-md-7">
+                <div class="tarjeta-formulario p-4">
+                    <h4 class="fw-bold mb-3">Solicita una consulta</h4>
+                    <form id="form">                        
+                        <div class="field">
+                            <label class="label-text" for="empresa">Empresa</label>
+                            <input class="input-text" type="text" name="empresa" id="empresa" placeholder="Nombre de la empresa" required>
+                        </div>                       
+                        <div class="field">
+                            <label class="label-text" for="email">Email</label>
+                            <input class="input-text" type="text" name="email" id="email" placeholder="Email" required>
+                        </div>                        
+                        <div class="field">
+                            <label class="label-text" for="telefono">Teléfono</label>
+                            <input class="input-text" type="text" name="telefono" id="telefono" placeholder="Teléfono" required>
+                        </div>
+                        <div class="field">
+                            <label class="label-text" for="servicio">Servicio</label>
+                            <input class="input-text" type="text" name="servicio" id="servicio" placeholder="Servicio de interés" required>
+                        </div>
+                        <div class="field">
+                            <label class="label-text" for="empleados">Numero de Empleados</label>
+                            <input class="input-text" type="text" name="empleados" id="empleados" placeholder="Número de empleados" required>
+                        </div>
+                        <div class="field">
+                            <label class="label-text" for="mensaje">Mensaje</label>
+                            <input class="input-text" type="text" name="mensaje" id="mensaje" placeholder="Mensaje" required>
+                        </div>
+
+                        <input class="boton-enviar" type="submit" id="button" value="Enviar Consulta">
+                    </form>
+                    <script type="text/javascript"
+                    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+                    <script type="text/javascript">
+                    emailjs.init('Hhct1Okd4T7Ji_81I')
+                    </script>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="pie-pagina text-dark pt-5" id="pie-pagina">
+        <div class="container-fluid text-light py-4">
+            <div class="row">
+                <div class="col-md-3 mb-4">
+                    <h5 class="titulo-footer fw-bold" id="titulo-footer">Smart Factory Chain</h5>
+                    <p>
+                        Transformamos empresas manufactureras con tecnología de vanguardia,
+                        conectando el presente con el futuro de la industria.
+                    </p>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <h6 class="fw-bold">Servicios</h6>
+                    <ul class="list-unstyled">
+                        <li>Consultoría Digital</li>
+                        <li>Implementación IoT</li>
+                        <li>Automatización</li>
+                        <li>Análisis de Datos</li>
+                        <li>Mantenimiento Predictivo</li>
+                    </ul>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <h6 class="fw-bold">Sectores</h6>
+                    <ul class="list-unstyled">
+                        <li>Manufactura</li>
+                        <li>Automotriz</li>
+                        <li>Alimentaria</li>
+                        <li>Textil</li>
+                        <li>Química</li>
+                        <li>Farmacéutica</li>
+                    </ul>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <h6 class="fw-bold">Contacto</h6>
+                    <ul class="list-unstyled">
+                        <li>CAL. Nicolas De Arriola NRO. 640</li>
+                        <li>+51 942 149 115</li>
+                        <li>contacto@smartfactorychain.com</li>
+                        <li><span class="fw-bold">Disponible 24/7</span></li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <div class="text-center">
+                <p class="mb-0">© 2023 Smart Factory Chain. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Chatbot -->
+    <div id="chatbot-container">
+        <div id="chatbot-header">🤖 SmartBot
+            <button id="close-chat">✖</button>
+        </div>
+        <div id="chatbot-messages"></div>
+        <div id="chatbot-input">
+            <input type="text" id="user-input" placeholder="Escribe tu mensaje...">
+            <button id="send-btn">Enviar</button>
+        </div>
+    </div>
+
+    <!-- Botón flotante -->
+    <button id="chatbot-toggle">💬</button>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
     <script src="Script.js"></script>
+    <script src="./Helpers/gmail.js"></script>
     
-
 </body>
+
 </html>
