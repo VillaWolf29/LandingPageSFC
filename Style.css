@@ -18,7 +18,7 @@
 body{	
 	font-family: "Baumans", system-ui;
   background: linear-gradient(135deg, var(--dark-bg) 0%, var(--dark-secondary) 100%);
-  color: var(--text-white);  
+  color: var(--text-white); 
   line-height: 1.6;
   overflow-x: hidden;
 }
@@ -87,6 +87,51 @@ body{
   margin-right: 5px;
   vertical-align: middle;
   filter: brightness(0) invert(1);
+}
+
+/*Video*/
+
+.bg-video-wrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1; 
+  background-color: #000; 
+}
+
+.bg-video-wrap video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+  object-fit: cover; 
+  -o-object-fit: cover;
+}
+.bg-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  background: rgba(0, 0, 0, 0.35);
+  pointer-events: none;
+}
+.main-content {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-align: center;
+  padding: 3rem 1rem;
 }
 
 .titulo-inicio {
@@ -171,30 +216,31 @@ body{
   max-width: 800px;
   margin: 0 auto 3rem;
 }
-.tarjeta-tecnologia {
-  background: rgb(255, 255, 255);
-  backdrop-filter: blur(8px);
-  border: 2px solid rgba(255, 255, 255, 0.3);
-  border-radius: 12px;
-  transition: all 0.3s ease;
-}
-.tarjeta-tecnologia:hover {
-  border-color: #3a8ef6;
-  box-shadow: 0 0 0 1.5px rgba(58, 142, 246, 0.1);
-  transform: translateY(-2px);
-}
 .tarjeta-tecnologia:hover .logos-tecnologia {
   transform: scale(1.15);
 }
+.tarjeta-contacto,
+.tarjeta-formulario,.fila-servicio,.tarjeta-tecnologia {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(0, 212, 170, 0.3);
+  border-radius: 20px;
+  backdrop-filter: blur(15px);
+  transition: all 0.3s ease;
+}
+.tarjeta-contacto:hover,
+.tarjeta-formulario:hover,.fila-servicio:hover,.tarjeta-tecnologia:hover {
+  border-color: var(--accent-teal);
+  box-shadow: 0 10px 30px rgba(0, 212, 170, 0.1);
+}
 .titulo-cuadro {
-  color: #2d3748;
-  font-size: 1.1rem;
+  color: white;
+  font-size: 1.5rem;
   font-weight: 600;
   margin: 0;
 }
 .texto-cuadro {
-  color: #718096;
-  font-size: 0.9rem;
+  color: white;
+  font-size: 1rem;
   margin-top: 4px;
 }
 .numero-metrica {
@@ -263,8 +309,6 @@ body{
   position: sticky;
   top: 120px;
   border-radius: 20px;
-  background: var(--dark-secondary);
-  color: var(--text-light);
   padding: 2rem;  
   margin-bottom: 60px;
   transform-origin: top center;
@@ -280,19 +324,6 @@ body{
 .tarjeta-caracteristica:hover {
   transform: translateY(-8px);
   box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-}
-.tarjeta-contacto,
-.tarjeta-formulario {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(0, 212, 170, 0.3);
-  border-radius: 20px;
-  backdrop-filter: blur(15px);
-  transition: all 0.3s ease;
-}
-.tarjeta-contacto:hover,
-.tarjeta-formulario:hover {
-  border-color: var(--accent-teal);
-  box-shadow: 0 10px 30px rgba(0, 212, 170, 0.1);
 }
 .tarjeta-contacto h4,
 .tarjeta-formulario h4 {
@@ -464,7 +495,6 @@ body{
   color: var(--text-light);
 }
 
-/* Mensajes del usuario */
 .user-msg {
   text-align: right;
   background: var(--success);
@@ -476,7 +506,6 @@ body{
   max-width: 80%;
 }
 
-/* Mensajes del bot */
 .bot-msg {
   text-align: left;
   background: var(--secondary-blue);
@@ -487,8 +516,6 @@ body{
   display: inline-block;
   max-width: 80%;
 }
-
-/* Input */
 #chatbot-input {
   display: flex;
   border-top: 1px solid var(--primary-blue);
