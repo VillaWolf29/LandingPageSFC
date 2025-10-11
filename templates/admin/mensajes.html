@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Panel de Administración - Mensajes</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/Style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
     <style>
         .mensajes-container {
             margin-top: 30px;
@@ -84,6 +84,21 @@
         <h2>Mensajes Recibidos</h2>
 
         <div class="mensajes-container">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <div>
+                    <form method="get" class="d-inline">
+                        <label for="per_page">Mostrar</label>
+                        <select id="per_page" name="per_page" onchange="this.form.submit()">
+                            <option value="10" {% if per_page==10 %}selected{% endif %}>10</option>
+                            <option value="20" {% if per_page==20 %}selected{% endif %}>20</option>
+                            <option value="50" {% if per_page==50 %}selected{% endif %}>50</option>
+                        </select>
+                    </form>
+                </div>
+                <div>
+                    <a class="btn btn-sm btn-outline-primary" href="{{ url_for('export_mensajes_csv') }}">Exportar CSV</a>
+                </div>
+            </div>
             {% if mensajes %}
                 <table>
                     <thead>
@@ -115,6 +130,17 @@
                 <div class="empty-state">
                     <p>No hay mensajes recibidos todavía.</p>
                 </div>
+            {% endif %}
+            <!-- Paginación simple -->
+            {% if total and total > per_page %}
+                <nav aria-label="Paginación mensajes">
+                    <ul class="pagination mt-3">
+                        {% set last_page = (total // per_page) + (1 if total % per_page else 0) %}
+                        <li class="page-item {% if page <= 1 %}disabled{% endif %}"><a class="page-link" href="?page={{ page-1 }}&per_page={{ per_page }}">Anterior</a></li>
+                        <li class="page-item disabled"><span class="page-link">Página {{ page }} de {{ last_page }}</span></li>
+                        <li class="page-item {% if page >= last_page %}disabled{% endif %}"><a class="page-link" href="?page={{ page+1 }}&per_page={{ per_page }}">Siguiente</a></li>
+                    </ul>
+                </nav>
             {% endif %}
         </div>
     </div>

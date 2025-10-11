@@ -58,5 +58,25 @@
         "empleados": "10000000000000",
         "mensaje": "465",
         "fecha": "2025-10-11 16:38:26"
+    },
+    {
+        "id": 1760219392395,
+        "empresa": "asdf",
+        "email": "sadfsadf@gmail.com",
+        "telefono": "asdf",
+        "servicio": "asdf",
+        "empleados": "45",
+        "mensaje": "sdfg",
+        "fecha": "2025-10-11 16:49:52"
+    },
+    {
+        "id": 1760220097097,
+        "empresa": "Holaaaaaaaaa",
+        "email": "aksdjas@gmail.com",
+        "telefono": "987456321",
+        "servicio": "holiiii",
+        "empleados": "100",
+        "mensaje": "465",
+        "fecha": "2025-10-11 17:01:37"
     }
 ]
