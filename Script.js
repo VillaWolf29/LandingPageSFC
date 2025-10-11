@@ -1,4 +1,3 @@
-
 document.addEventListener('DOMContentLoaded', function () {
     var el = document.getElementById('carrusel-caracteristicas');
     if (!el || typeof bootstrap === 'undefined') return;
@@ -26,40 +25,47 @@ document.addEventListener('DOMContentLoaded', function () {
 // Animación de scroll para la sección de servicios
 document.addEventListener('DOMContentLoaded', () => {
   const wrapper = document.querySelector('#seccion-servicios');
-  const servicios = document.querySelectorAll('.fila-servicio');
+  const servicios = Array.from(document.querySelectorAll('.fila-servicio'));
 
   if (!wrapper || servicios.length === 0) return;
 
-  const total = servicios.length;
-  wrapper.style.setProperty('--numcards', total);
+  const options = { root: null, threshold: 0.25 };
+  let observer = null;
 
-  if (typeof ViewTimeline === 'undefined' || typeof CSS === 'undefined' || typeof CSS.percent !== 'function') {
-    console.warn('Scroll-driven animations no soportado en este navegador');
-    return;
-  }
+  const isDesktop = () => window.innerWidth >= 768;
 
-  const timeline = new ViewTimeline({
-    subject: wrapper,
-    axis: 'block'
-  });
-
-  servicios.forEach((servicio, i) => {
-    const index = i + 1;
-    const reverse = total - index;
-    const endScale = 1 - (0.1 * reverse);
-
-    servicio.animate(
-      { transform: [ `scale(1)`, `scale(${endScale})` ] },
-      {
-        timeline: timeline,
-        fill: 'forwards',
-        rangeStart: `exit-crossing ${CSS.percent((i / total) * 100)}`,
-        rangeEnd:   `exit-crossing ${CSS.percent((index / total) * 100)}`
+  const handleEntries = (entries) => {
+    entries.forEach(entry => {
+      const el = entry.target;
+      if (entry.isIntersecting) {
+        // efecto con stagger basado en el índice (solo desktop)
+        const idx = servicios.indexOf(el);
+        const delay = Math.min(600, idx * 120); // cap en 600ms
+        el.style.transitionDelay = `${delay}ms`;
+        el.classList.add('in-view');
+      } else {
+        // quitar estado cuando sale del viewport
+        el.style.transitionDelay = '';
+        el.classList.remove('in-view');
       }
-    );
+    });
+  };
+
+  const createObserver = () => {
+    if (observer) observer.disconnect();
+    if (!isDesktop()) return;
+    observer = new IntersectionObserver(handleEntries, options);
+    servicios.forEach(s => observer.observe(s));
+  };
+
+  // init y reconstruir al redimensionar (debounced)
+  createObserver();
+  let rTimer = null;
+  window.addEventListener('resize', () => {
+    clearTimeout(rTimer);
+    rTimer = setTimeout(createObserver, 120);
   });
 });
-
 
 // Respuestas predefinidas del bot
 const respuestas = {
@@ -103,4 +109,3 @@ sendBtn.onclick = enviarMensaje;
 userInput.addEventListener("keypress", e => {
   if(e.key === "Enter") enviarMensaje();
 });
-    
