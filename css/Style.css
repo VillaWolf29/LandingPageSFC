@@ -373,7 +373,7 @@ img, video {
   text-align: center;
   gap: 1rem;
   padding: 2rem;
-  background: rgba(255,255,255,0.03);
+
   border-radius: 12px;
 }
 .tarjeta-caracteristica img,
@@ -396,8 +396,7 @@ img, video {
 .tarjeta-contacto,
 .tarjeta-formulario,
 .fila-servicio, 
-.tarjeta-tecnologia,
-.tarjeta-caracteristica {
+.tarjeta-tecnologia {
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(0, 212, 170, 0.3);
   border-radius: 20px;
@@ -407,8 +406,7 @@ img, video {
 .tarjeta-contacto:hover,
 .tarjeta-formulario:hover,
 .fila-servicio:hover,
-.tarjeta-tecnologia:hover,
-.tarjeta-caracteristica:hover { border-color: var(--accent-teal); box-shadow: 0 10px 30px rgba(0, 212, 170, 0.1); }
+.tarjeta-tecnologia:hover { border-color: var(--accent-teal); box-shadow: 0 10px 30px rgba(0, 212, 170, 0.1); }
 
  /* === TÍTULO === */
 .tarjeta-formulario h4 {
