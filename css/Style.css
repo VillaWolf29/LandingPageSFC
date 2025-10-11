@@ -25,8 +25,7 @@ body{
 .shadow {
   box-shadow: none !important;
 }
-.sombra-barra-navegacion {
-  background: var(--gradient-nav) !important;
+.sombra-barra-navegacion {  
   backdrop-filter: blur(15px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 4px 20px rgba(30, 64, 175, 0.4);
@@ -41,7 +40,24 @@ body{
   border-radius: 20px;
   transition: all 0.3s ease;
 }
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 50px;
+    flex: 0 0 auto;
+}
 
+.logo img {
+    display: block;
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 150px;
+    object-fit: contain;
+    filter: none;
+}
+/*
 .titulo-navegador {
   font-size: 2rem;
   background: linear-gradient(90deg, #60A5FA 0%, #33E1C4 100%) !important;
@@ -51,7 +67,7 @@ body{
   color: transparent;
   margin-right: 20px;
   transition: all 0.3s ease;
-}
+}*/
 
 .navbar-nav .nav-link:hover,
 .navbar-nav .nav-link.active {
