@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Administración - Mensajes</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Style.css') }}">
+    <style>
+        .mensajes-container {
+            margin-top: 30px;
+        }
+
+        .mensaje-card {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+
+        .mensaje-header {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+        }
+
+        .mensaje-fecha {
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        .mensaje-contenido {
+            margin-top: 15px;
+        }
+
+        .mensaje-campo {
+            margin-bottom: 10px;
+        }
+
+        .mensaje-campo strong {
+            font-weight: 600;
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 50px 0;
+            color: #666;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+            font-weight: 600;
+        }
+
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+
+        .mensaje-texto {
+            max-width: 300px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Panel de Administración</h1>
+        <h2>Mensajes Recibidos</h2>
+
+        <div class="mensajes-container">
+            {% if mensajes %}
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Fecha</th>
+                            <th>Empresa</th>
+                            <th>Email</th>
+                            <th>Teléfono</th>
+                            <th>Servicio</th>
+                            <th>Empleados</th>
+                            <th>Mensaje</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for mensaje in mensajes %}
+                            <tr>
+                                <td>{{ mensaje.fecha }}</td>
+                                <td>{{ mensaje.empresa }}</td>
+                                <td>{{ mensaje.email }}</td>
+                                <td>{{ mensaje.telefono }}</td>
+                                <td>{{ mensaje.servicio }}</td>
+                                <td>{{ mensaje.empleados }}</td>
+                                <td class="mensaje-texto" title="{{ mensaje.mensaje }}">{{ mensaje.mensaje }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            {% else %}
+                <div class="empty-state">
+                    <p>No hay mensajes recibidos todavía.</p>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>

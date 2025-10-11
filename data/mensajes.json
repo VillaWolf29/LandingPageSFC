@@ -1,0 +1,62 @@
+[
+    {
+        "id": 1760216304572,
+        "empresa": "Hola",
+        "email": "sdfgsdfg@gmail.com",
+        "telefono": "987456321",
+        "servicio": "sadf",
+        "empleados": "100",
+        "mensaje": "465",
+        "fecha": "2025-10-11 15:58:24"
+    },
+    {
+        "id": 1760216353123,
+        "empresa": "Funebre",
+        "email": "jdoblea29@gmail.com",
+        "telefono": "987456321",
+        "servicio": "Login",
+        "empleados": "100",
+        "mensaje": "Agregar Login",
+        "fecha": "2025-10-11 15:59:13"
+    },
+    {
+        "id": 1760216560329,
+        "empresa": "Funeraria Melendez",
+        "email": "mel@gmail.com",
+        "telefono": "987456321",
+        "servicio": "Funeraria",
+        "empleados": "100",
+        "mensaje": "Hola como van",
+        "fecha": "2025-10-11 16:02:40"
+    },
+    {
+        "id": 1760217765209,
+        "empresa": "Holaa",
+        "email": "jdoblea29@gmail.com",
+        "telefono": "987456321",
+        "servicio": "juan",
+        "empleados": "100000",
+        "mensaje": "ñksjf",
+        "fecha": "2025-10-11 16:22:45"
+    },
+    {
+        "id": 1760218208069,
+        "empresa": "Cuentame",
+        "email": "jdoblea29@gmail.com",
+        "telefono": "987456321",
+        "servicio": "holiiii",
+        "empleados": "100",
+        "mensaje": "sadf",
+        "fecha": "2025-10-11 16:30:08"
+    },
+    {
+        "id": 1760218706249,
+        "empresa": "Holaa2",
+        "email": "jdoblea29@gmail.com",
+        "telefono": "987456321",
+        "servicio": "holiiii",
+        "empleados": "10000000000000",
+        "mensaje": "465",
+        "fecha": "2025-10-11 16:38:26"
+    }
+]
