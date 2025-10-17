@@ -62,12 +62,12 @@
         }
 
         th {
-            background-color: #f2f2f2;
+            background-color:rgba(0, 212, 170, 0.4);
             font-weight: 600;
         }
 
         tr:hover {
-            background-color: #f5f5f5;
+            background-color: transparent;
         }
 
         .mensaje-texto {
@@ -80,7 +80,17 @@
 </head>
 <body>
     <div class="container">
-        <h1>Panel de Administración</h1>
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+            <h1>Panel de Administración</h1>
+            <div>
+                {% if current_user.is_authenticated %}
+                    <span>Conectado como <strong>{{ current_user.username }}</strong></span>
+                    <a class="btn btn-sm btn-outline-secondary" href="{{ url_for('logout') }}">Cerrar sesión</a>
+                {% else %}
+                    <a class="btn btn-sm btn-outline-primary" href="{{ url_for('login') }}">Iniciar sesión</a>
+                {% endif %}
+            </div>
+        </div>
         <h2>Mensajes Recibidos</h2>
 
         <div class="mensajes-container">

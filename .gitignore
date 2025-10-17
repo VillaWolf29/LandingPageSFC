@@ -1,26 +1,19 @@
 # Python bytecode and cache
 __pycache__/
 *.pyc
-
 # Pytest cache
 .pytest_cache/
-
 # Virtual environment
 .venv/
 venv/
-
 # Environment variables file
 .env
-
 # VS Code settings
 .vscode/
-
 # OS files
 .DS_Store
-
 # Ignore compiled Python files
 *.pyo
-
 # Ignore distribution/build folders
 build/
 dist/

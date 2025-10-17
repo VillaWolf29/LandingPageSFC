@@ -16,7 +16,7 @@
 <body>
     <!-- Video de fondo -->
     <div class="bg-video-wrap" aria-hidden="true">
-    <video autoplay muted loop playsinline poster="{{ url_for('static', filename='Imagenes/Logo.png') }}">     
+    <video autoplay muted loop playsinline poster="{{ url_for('static', filename='Videos/fondofijo.mp4') }}">     
     <source src="{{ url_for('static', filename='Videos/fondofijo.mp4') }}" type="video/mp4">
         </video>
     </div>
@@ -54,10 +54,11 @@
                             id="enlace-caracteristicas">Características</a>
                     </li>
                 </ul>
-            </div>
-            <a href="tel:+51000000000" class="telefono-navegacion me-3 fw-bold text-decoration-none"
-                id="telefono-navegacion">                
-                +51 942 149 115
+            </div>            
+            <a href="https://wa.me/51942149115" 
+                class="telefono-navegacion me-3 fw-bold text-decoration-none"
+                id="telefono-navegacion"
+                target="_blank"> <img src="{{ url_for('static', filename='Imagenes/whatsapp.png') }}" alt="WhatsApp" style="width:40px; height:40px; margin-right:5px;">
             </a>
             <a href="#seccion-contacto" class="btn boton-contacto" id="boton-contacto-navegacion">Contacto</a>
         </div>
@@ -478,11 +479,7 @@
                     <h4 class="fw-bold mb-3">Información de contacto</h4>
                     <p><strong>Oficina Principal</strong><br>
                         CAL. Nicolas De Arriola NRO. 640<br>
-                        Cajamarca</p>
-
-                    <p><strong>Teléfono</strong><br>
-                        +51 942 149 115</p>
-
+                        Cajamarca</p>                  
                     <p><strong>Email</strong><br>
                         contacto@smartfactorychain.com</p>
 
@@ -563,9 +560,24 @@
                 <div class="col-md-3 mb-4">
                     <h6 class="fw-bold">Contacto</h6>
                     <ul class="list-unstyled">
-                        <li>CAL. Nicolas De Arriola NRO. 640</li>
-                        <li>+51 942 149 115</li>
-                        <li>contacto@smartfactorychain.com</li>
+                        <li>CAL. Nicolas De Arriola NRO. 640</li>                        
+                        <li>
+                            <a 
+                                href="https://www.gmail.com" 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                title="Abrir Gmail"
+                                class="inline-block hover:opacity-80 transition-opacity"
+                            >
+                                <img 
+                                src="{{ url_for('static', filename='Imagenes/gmail.png') }}" 
+                                alt="Abrir Gmail" 
+                                class="w-5 h-5"
+                                style="width:35px; height:35px; margin-right:5px;"
+                                >
+                            </a>
+                            <img src="{{ url_for('static', filename='Imagenes/whatsapp.png') }}" alt="WhatsApp" style="width:35px; height:35px; margin-right:5px;">
+                        </li>
                         <li><span class="fw-bold">Disponible 24/7</span></li>
                     </ul>
                 </div>

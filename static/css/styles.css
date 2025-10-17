@@ -41,21 +41,21 @@ body{
   transition: all 0.3s ease;
 }
 .logo {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    height: 50px;
-    flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 50px;
+  flex: 0 0 auto;
 }
 
 .logo img {
-    display: block;
-    width: auto;
-    height: auto;
-    max-width: 100%;
-    max-height: 150px;
-    object-fit: contain;
-    filter: none;
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 150px;
+  object-fit: contain;
+  filter: none;
 }
 /*
 .titulo-navegador {
@@ -104,8 +104,6 @@ body{
   vertical-align: middle;
   filter: brightness(0) invert(1);
 }
-
-/*Video*/
 
 .bg-video-wrap {
   position: fixed;
@@ -350,25 +348,16 @@ body{
   color: var(--text-light);
   line-height: 1.6;
 }
-
-/* Estilos del formulario */
-
-
-/* === TÍTULO === */
 .tarjeta-formulario h4 {
   color: #00c4b3;
   font-weight: 700;
   margin-bottom: 25px;
 }
-
-/* === FORMULARIO EN DOS COLUMNAS === */
 #form {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 18px 25px;
 }
-
-/* === CAMPOS === */
 .field {
   display: flex;
   flex-direction: column;
@@ -392,14 +381,10 @@ body{
   line-height: 1.4;
   transition: box-shadow 0.2s ease;
 }
-
-/* === EFECTO DE ENFOQUE === */
 .input-text:focus {
   outline: none;
   box-shadow: 0 0 0 2px #00c4b3;
 }
-
-/* === CAMPO MENSAJE OCUPA TODA LA FILA === */
 #mensaje {
   grid-column: span 2;
   height: 100px;
@@ -441,8 +426,6 @@ body{
 .pie-pagina span {
   color: #fff; 
 }
-
-/* Botón flotante */
 #chatbot-toggle {
   position: fixed;
   bottom: 20px;
@@ -463,8 +446,6 @@ body{
 #chatbot-toggle:hover {
   transform: scale(1.1);
 }
-
-/* Contenedor del chatbot */
 #chatbot-container {
   position: fixed;
   bottom: 90px;
@@ -480,8 +461,6 @@ body{
   z-index: 1000;
   border: 2px solid var(--primary-blue);
 }
-
-/* Header */
 #chatbot-header {
   background: var(--gradient-nav);
   color: var(--text-white);
@@ -491,8 +470,6 @@ body{
   justify-content: space-between;
   align-items: center;
 }
-
-/* Botón cerrar */
 #close-chat {
   background: transparent;
   border: none;
@@ -500,8 +477,6 @@ body{
   font-size: 16px;
   cursor: pointer;
 }
-
-/* Mensajes */
 #chatbot-messages {
   flex: 1;
   padding: 10px;
@@ -560,5 +535,34 @@ body{
   cursor: pointer;
   transition: opacity 0.2s ease;
 }
+/* Media Query para tabletas y móviles */
+@media (max-width: 992px) { /* Se activará en pantallas más pequeñas que un desktop típico */
+    
+    .titulo-inicio, .titulo-blanco {
+        font-size: 3.5rem; /* ¡Mucho más manejable! */
+        line-height: 1.2;
+    }
 
+    .descripcion-inicio {
+        font-size: 1.2rem;
+    }
 
+    /* También es buena idea ajustar otros títulos */
+    .titulo-nosotros-principal, .titulo-tecnologias, .titulo-servicios, .titulo-caracteristicas, .titulo-contacto {
+        font-size: 2.5rem !important;
+    }
+}
+/* Añade esto dentro de la media query */
+@media (max-width: 768px) {
+   /* ... */
+   .video-nosotros {
+       width: 100%; /* Ocupa todo el ancho en móvil */
+   }
+}
+@media (max-width: 768px) {
+    /* ... (los estilos de fuente de arriba) ... */
+
+    #form {
+        grid-template-columns: 1fr; /* Cambia a una sola columna */
+    }
+}
