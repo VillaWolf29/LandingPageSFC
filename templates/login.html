@@ -6,12 +6,101 @@
     <title>Iniciar sesión</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
     <style>
-        .login-box { max-width:400px; margin:60px auto; padding:20px; border:1px solid #ddd; border-radius:6px; background:rgba(0, 212, 170, 0.4); }
-        .login-box h2 { margin-bottom:20px; }
-        .form-group { margin-bottom:12px; }
-        .btn { padding:8px 12px; }
-        .flash { padding:8px; margin-bottom:12px; border-radius:4px; }
-        
+    :root {
+    --primary-blue: #1E40AF;
+    --secondary-blue: #3B82F6;
+    --accent-teal: #00D4AA;
+    --accent-cyan: #007CF0;
+    --dark-bg: #0F172A;
+    --dark-secondary: #1E293B;
+    --text-light: #e2e8f0;
+    --text-white: #ffffff;
+    --success: #10B981;
+    --warning: #F59E0B;
+    --danger: #EF4444;
+    --gradient-text: linear-gradient(90deg, #42A5F5 0%, #7E57C2 25%, #AB47BC 50%, #EC407A 75%, #F48FB1 100%);
+    --gradient-nav: linear-gradient(90deg, var(--primary-blue), var(--secondary-blue));
+    --gradient-button: linear-gradient(90deg, var(--accent-teal), var(--accent-cyan));
+    }
+    body {
+    background-color: var(--dark-bg);
+    color: var(--text-light);
+    font-family: Arial, sans-serif;
+    }
+    .login-box {
+    max-width: 400px;
+    margin: 60px auto;
+    padding: 24px; 
+    border: 1px solid var(--primary-blue); 
+    border-radius: 8px; 
+    background: var(--dark-secondary); 
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); 
+    }
+    .login-box h2 {
+    margin-bottom: 24px;
+    color: var(--text-white);
+    text-align: center;
+    font-size: 1.5em;
+    border-bottom: 2px solid var(--accent-teal); 
+    padding-bottom: 10px;
+    }
+    .form-group {
+    margin-bottom: 16px;
+    }
+    .form-control {
+    width: 100%;
+    padding: 10px 12px;
+    background-color: var(--dark-bg);
+    border: 1px solid var(--primary-blue);
+    border-radius: 4px;
+    color: var(--text-light);
+    box-sizing: border-box; 
+    }
+    .form-control:focus {
+    outline: none;
+    border-color: var(--accent-cyan);
+    box-shadow: 0 0 5px rgba(0, 124, 240, 0.5);
+    }
+    .btn {
+    padding: 10px 16px; 
+    border-radius: 6px;
+    border: none;
+    background: var(--gradient-button); 
+    color: var(--text-white);
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.3s ease, transform 0.2s ease;
+    width: 100%; 
+    text-transform: uppercase;
+    font-size: 1em;
+    }
+    .btn:hover {
+    opacity: 0.9;
+    transform: scale(1.02); 
+    }
+    .flash {
+    padding: 12px;
+    margin-bottom: 16px;
+    border-radius: 6px;
+    color: var(--text-white);
+    font-weight: 500;
+    border: 1px solid;
+    }
+    .flash.success {
+    background-color: rgba(16, 185, 129, 0.2); 
+    border-color: var(--success);
+    color: var(--success);
+    }
+    .flash.warning {
+    background-color: rgba(245, 158, 11, 0.2);
+    border-color: var(--warning);
+    color: var(--warning);
+    }
+    .flash.danger {
+    background-color: rgba(239, 68, 68, 0.2);
+    border-color: var(--danger);
+    color: var(--danger);
+    } 
     </style>
 </head>
 <body>

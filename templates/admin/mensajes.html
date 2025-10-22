@@ -6,75 +6,279 @@
     <title>Panel de Administración - Mensajes</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
     <style>
+        :root {
+        --primary-blue: #1E40AF;
+        --secondary-blue: #3B82F6;
+        --accent-teal: #00D4AA;
+        --accent-cyan: #007CF0;
+        --dark-bg: #0F172A; 
+        --dark-secondary: #1E293B; 
+        --text-light: #e2e8f0; 
+        --text-white: #ffffff; 
+        --success: #10B981;
+        --warning: #F59E0B;
+        --danger: #EF4444;
+        --gradient-text: linear-gradient(90deg, #42A5F5 0%, #7E57C2 25%, #AB47BC 50%, #EC407A 75%, #F48FB1 100%);
+        --gradient-nav: linear-gradient(90deg, var(--primary-blue), var(--secondary-blue));
+        --gradient-button: linear-gradient(90deg, var(--accent-teal), var(--accent-cyan));
+        }
+        body {
+        background-color: var(--dark-bg);
+        color: var(--text-light);
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        line-height: 1.6;
+        }
         .mensajes-container {
-            margin-top: 30px;
+        margin-top: 30px;
         }
-
         .mensaje-card {
-            background-color: #f9f9f9;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            padding: 15px;
-            margin-bottom: 20px;
+        background-color: var(--dark-secondary);
+        border: 1px solid var(--primary-blue);
+        border-radius: 8px; 
+        padding: 20px;
+        margin-bottom: 25px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); 
+        transition: all 0.3s ease;
         }
-
+        .mensaje-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+        }
         .mensaje-header {
-            display: flex;
-            justify-content: space-between;
-            border-bottom: 1px solid #eee;
-            padding-bottom: 10px;
-            margin-bottom: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 2px solid var(--primary-blue); 
+        padding-bottom: 15px;
+        margin-bottom: 15px;
         }
-
         .mensaje-fecha {
-            color: #666;
-            font-size: 0.9em;
+        color: var(--text-light);
+        opacity: 0.7; 
+        font-size: 0.9em;
         }
-
         .mensaje-contenido {
-            margin-top: 15px;
+        margin-top: 15px;
         }
-
         .mensaje-campo {
-            margin-bottom: 10px;
+        margin-bottom: 12px;
         }
-
         .mensaje-campo strong {
-            font-weight: 600;
+        font-weight: 600;
+        color: var(--text-white);
+        display: block;
+        margin-bottom: 4px;
         }
-
         .empty-state {
-            text-align: center;
-            padding: 50px 0;
-            color: #666;
+        text-align: center;
+        padding: 50px 20px;
+        color: var(--text-light);
+        opacity: 0.6;
+        background-color: var(--dark-secondary);
+        border-radius: 8px;
+        border: 2px dashed var(--primary-blue); 
         }
-
         table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+        background-color: var(--dark-secondary);
+        border-radius: 8px; 
+        overflow: hidden; 
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
         }
-
-        th, td {
-            padding: 12px;
-            text-align: left;
-            border-bottom: 1px solid #ddd;
+        th,
+        td {
+        padding: 14px 18px;
+        text-align: left;
+        border-bottom: 1px solid var(--dark-bg);
         }
-
         th {
-            background-color:rgba(0, 212, 170, 0.4);
-            font-weight: 600;
+        background-color: var(--primary-blue); 
+        color: var(--text-white);
+        font-weight: 600;
+        text-transform: uppercase;
+        font-size: 0.85em;
+        letter-spacing: 0.5px;
         }
-
+        tr {
+        transition: background-color 0.2s ease;
+        }
         tr:hover {
-            background-color: transparent;
+        background-color: var(--dark-bg);
+        }
+        tr:last-child td {
+        border-bottom: none;
+        }
+        .mensaje-texto {
+        max-width: 300px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        }
+        .container {
+        max-width: 1200px; /* Ancho máximo para el panel */
+        margin: 0 auto;
+        padding: 20px;
         }
 
-        .mensaje-texto {
-            max-width: 300px;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
+        h1 {
+        color: var(--text-white);
+        font-size: 2.2em;
+        font-weight: 700;
+        border-bottom: 3px solid var(--primary-blue);
+        padding-bottom: 10px;
+        margin-bottom: 15px;
+        }
+
+        h2 {
+        color: var(--text-light);
+        font-size: 1.6em;
+        font-weight: 600;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        }
+
+        /* --- Cabecera (Info de Usuario y Logout) --- */
+        .header-info span {
+        color: var(--text-light);
+        margin-right: 15px;
+        font-size: 0.95em;
+        }
+
+        .header-info span strong {
+        color: var(--text-white);
+        font-weight: 600;
+        }
+
+        /* --- Estilos de Botones (Base y Outline) --- */
+        .btn {
+        display: inline-block;
+        padding: 8px 16px;
+        border-radius: 6px;
+        text-decoration: none;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        border: 2px solid transparent;
+        text-align: center;
+        font-size: 0.9em;
+        }
+
+        .btn-sm {
+        padding: 6px 12px;
+        font-size: 0.85em;
+        }
+
+        /* Botón Outline Primario (Exportar, Iniciar Sesión) */
+        .btn-outline-primary {
+        border-color: var(--accent-cyan);
+        color: var(--accent-cyan);
+        background-color: transparent;
+        }
+
+        .btn-outline-primary:hover {
+        background-color: var(--accent-cyan);
+        color: var(--dark-bg); /* Texto oscuro al pasar el mouse */
+        }
+
+        /* Botón Outline Secundario (Cerrar Sesión) */
+        .btn-outline-secondary {
+        border-color: var(--text-light);
+        color: var(--text-light);
+        background-color: transparent;
+        opacity: 0.8;
+        }
+
+        .btn-outline-secondary:hover {
+        background-color: var(--text-light);
+        color: var(--dark-bg);
+        opacity: 1;
+        }
+
+        /* --- Controles (Select para paginación) --- */
+        label[for="per_page"] {
+        margin-right: 8px;
+        font-size: 0.9em;
+        color: var(--text-light);
+        }
+
+        select#per_page {
+        background-color: var(--dark-secondary);
+        color: var(--text-light);
+        border: 1px solid var(--primary-blue);
+        padding: 8px 30px 8px 12px; /* Espacio para la flecha */
+        border-radius: 6px;
+        font-size: 0.9em;
+        cursor: pointer;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        /* Flecha personalizada para el select */
+        background-image: url("data:image/svg+xml;charset=UTF8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23e2e8f0' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+        background-repeat: no-repeat;
+        background-position: right 10px center;
+        background-size: 10px;
+        }
+
+        select#per_page:focus {
+        outline: none;
+        border-color: var(--accent-cyan);
+        box-shadow: 0 0 5px rgba(0, 124, 240, 0.5);
+        }
+
+        /* --- Clases de Bootstrap (para que funcione el layout) --- */
+        .d-flex { display: flex !important; }
+        .d-inline { display: inline !important; }
+        .justify-content-between { justify-content: space-between !important; }
+        .align-items-center { align-items: center !important; }
+        .mb-3 { margin-bottom: 1rem !important; } /* 1rem = 16px */
+        .mt-3 { margin-top: 1rem !important; }
+
+        /* --- Paginación --- */
+        .pagination {
+        display: flex;
+        justify-content: center;
+        list-style: none;
+        padding-left: 0;
+        border-radius: 6px;
+        margin: 25px 0 10px 0;
+        }
+
+        .page-item {
+        margin: 0 3px;
+        }
+
+        .page-link {
+        display: block;
+        padding: 8px 14px;
+        text-decoration: none;
+        background-color: var(--dark-secondary);
+        border: 1px solid var(--primary-blue);
+        color: var(--text-light);
+        transition: all 0.2s ease;
+        border-radius: 6px; /* Bordes redondeados individuales */
+        }
+
+        a.page-link:hover {
+        background-color: var(--primary-blue);
+        color: var(--text-white);
+        border-color: var(--primary-blue);
+        }
+
+        .page-item.disabled .page-link {
+        color: var(--text-light);
+        opacity: 0.5;
+        background-color: var(--dark-secondary);
+        border-color: var(--primary-blue);
+        cursor: not-allowed;
+        }
+
+        /* Estilo para el texto "Página X de Y" */
+        .page-item.disabled span.page-link {
+        background-color: transparent;
+        border: none;
+        opacity: 0.7;
         }
     </style>
 </head>
